@@ -1,11 +1,19 @@
 package org.example.rmsproject;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 
 public class UserManagementController {
 
@@ -108,4 +116,19 @@ public class UserManagementController {
 
         System.out.println("Details loaded for " + name);
     }
+
+    public void handleHomeButton(ActionEvent actionEvent) {
+        try {
+            // Loading the FXML file for the HomePage
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/HomePage.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

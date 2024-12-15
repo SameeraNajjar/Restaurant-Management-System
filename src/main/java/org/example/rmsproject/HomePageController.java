@@ -1,10 +1,16 @@
 package org.example.rmsproject;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import javafx.stage.Stage;
 
 public class HomePageController {
 
@@ -65,8 +71,18 @@ public class HomePageController {
     }
 
     @FXML
-    public void handleUsersButton() {
-        System.out.println("Users button clicked");
+    public void handleUsersButton(ActionEvent actionEvent) {
+        try {
+            // Loading the FXML file for the HomePage
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/UserManagement.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         // Add logic to switch to the Users page
     }
 
