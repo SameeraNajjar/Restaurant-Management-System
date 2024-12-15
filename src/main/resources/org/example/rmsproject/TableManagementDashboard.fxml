@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #F1F0ED;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.TableManagementDashboardController">
+
+   <children>
+      <AnchorPane prefHeight="1024.0" prefWidth="202.0" style="-fx-background-color: #004332;">
+         <children>
+            <Button fx:id="viewId" layoutX="11.0" layoutY="298.0" mnemonicParsing="false"  prefHeight="52.0" prefWidth="173.0" style="-fx-background-color: #F1F0ED; -fx-background-radius: 11; -fx-border-color: #B19251; -fx-border-radius: 10;" text="View" textFill="#b19251">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="customerId" layoutX="10.0" layoutY="699.0" mnemonicParsing="false" onAction="#loadCustomer" prefHeight="52.0" prefWidth="173.0" style="-fx-background-color: #F1F0ED; -fx-background-radius: 11; -fx-border-color: #B19251; -fx-border-radius: 10;" text="Customer" textFill="#b19251">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="reservationsId" layoutX="8.0" layoutY="415.0" mnemonicParsing="false" onAction="#loadReservations" prefHeight="52.0" prefWidth="173.0" style="-fx-background-color: #F1F0ED; -fx-background-radius: 11; -fx-border-color: #B19251; -fx-border-radius: 10;" text="Reservations" textFill="#b19251">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="addId" layoutX="8.0" layoutY="544.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="173.0" style="-fx-background-color: #F1F0ED; -fx-background-radius: 11; -fx-border-color: #B19251; -fx-border-radius: 10;" text="Add" textFill="#b19251">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="contentPane" layoutX="202.0" prefHeight="1024.0" prefWidth="1242.0" style="-fx-background-color: #F1F0ED;" />
+   </children>
+   <padding>
+      <Insets top="55.0" />
+   </padding>
+</AnchorPane>
