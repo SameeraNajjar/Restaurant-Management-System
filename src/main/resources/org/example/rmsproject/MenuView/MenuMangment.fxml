@@ -13,7 +13,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="BackgroundMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.MenuControllers.MenuManagementController">
 
    <children>
@@ -36,7 +35,7 @@
                         </Label>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Hyperlink text="Edit" textFill="#630c2f" onAction="#handleEditCategory">
+                              <Hyperlink onAction="#handleEditCategory" text="Edit" textFill="#630c2f">
                                  <font>
                                     <Font size="27.0" />
                                  </font>
@@ -64,7 +63,7 @@
                         </Label>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Hyperlink text="Edit" textFill="#630c2f" onAction="#handleEditCategory">
+                              <Hyperlink onAction="#handleEditCategory" text="Edit" textFill="#630c2f">
                                  <font>
                                     <Font size="27.0" />
                                  </font>
@@ -92,7 +91,7 @@
                         </Label>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Hyperlink text="Edit" textFill="#630c2f" onAction="#handleEditCategory">
+                              <Hyperlink onAction="#handleEditCategory" text="Edit" textFill="#630c2f">
                                  <font>
                                     <Font size="27.0" />
                                  </font>
@@ -109,7 +108,7 @@
                </children>
             </HBox>
             <Region prefHeight="200.0" prefWidth="200.0" />
-            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="45.0" prefWidth="144.0" style="-fx-background-color: #630C2F;" text="Add category" textFill="WHITE" onAction="#handleAddCategory">
+            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#handleAddCategory" prefHeight="45.0" prefWidth="144.0" style="-fx-background-color: #630C2F;" text="Add category" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
@@ -142,7 +141,7 @@
             </TableView>
          </children>
       </VBox>
-      <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="1040.0" layoutY="934.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="144.0" style="-fx-background-color: #630C2F;" text="Add Item" textFill="WHITE" onAction="#handleAddItem">
+      <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="1109.0" layoutY="120.0" mnemonicParsing="false" onAction="#handleAddItem" prefHeight="45.0" prefWidth="144.0" style="-fx-background-color: #630C2F;" text="Add Item" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
@@ -151,7 +150,7 @@
          </opaqueInsets>
       </Button>
 
-      <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="876.0" layoutY="934.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="144.0" style="-fx-background-color: #630C2F;" text="Edit Item" textFill="WHITE" onAction="#handleEditItem">
+      <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="762.0" layoutY="118.0" mnemonicParsing="false" onAction="#handleEditItem" prefHeight="45.0" prefWidth="144.0" style="-fx-background-color: #630C2F;" text="Edit Item" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>

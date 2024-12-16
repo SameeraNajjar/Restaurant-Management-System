@@ -1,4 +1,4 @@
-package org.example.rmsproject;
+package org.example.rmsproject.ReservationController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,21 +36,21 @@ public class TableManagementDashboardController {
 
     @FXML
     public void loadReservations(ActionEvent actionEvent) {
-        loadFXMLToContentPane("Reservations.fxml");
+        loadFXMLToContentPane("/org/example/rmsproject/Table/Reservations.fxml");
         updateButtonStyle(reservationsId);
     }
 
     @FXML
     public void loadCustomer(ActionEvent actionEvent) {
-        loadFXMLToContentPane("CustomerInfo.fxml");
+        loadFXMLToContentPane("/org/example/rmsproject/Table/CustomerInfo.fxml");
         updateButtonStyle(customerId);
     }
-//
-//    @FXML
-//    public void loadAdd(ActionEvent actionEvent) {
-//        loadFXMLToContentPane("Add_Reservation.fxml");
-//        updateButtonStyle(addId);
-//    }
+
+    @FXML
+    public void loadAdd(ActionEvent actionEvent) {
+        loadFXMLToContentPane("/org/example/rmsproject/Table/Add_Reservation.fxml");
+        updateButtonStyle(addId);
+    }
 
     private void loadFXMLToContentPane(String fxmlFileName) {
         try {

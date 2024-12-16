@@ -1,5 +1,6 @@
-package org.example.rmsproject;
+package org.example.rmsproject.RegisterationControllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -46,10 +47,18 @@ public class LoginController {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
+    public void handleHomeButton(ActionEvent actionEvent) {
+        try {
+            // Loading the FXML file for the HomePage
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/HomePage.fxml"));
+            Parent root = loader.load();
 
-     public void print(){
-
-        System.out.println(email.getText());
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -58,11 +67,10 @@ public class LoginController {
         @FXML
         private void goToRegistration(MouseEvent event) {
             try {
-                // تحميل ملف FXML لصفحة Registration
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Registration.fxml"));
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Registration/Registration.fxml"));
                 Parent root = loader.load();
 
-                // الحصول على Stage الحالي
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
