@@ -19,7 +19,6 @@ public class AddReservationController {
 
     public void Find_Table(ActionEvent actionE) throws IOException {
         noTablesAvailable.setText("No tables are available yet.");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Table/Reservation_Failed_message.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
         stage.setTitle("Failed! Message");
