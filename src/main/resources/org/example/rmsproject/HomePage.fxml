@@ -10,11 +10,11 @@
 <AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.HomePageController">
     <!-- Sidebar -->
     <VBox alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="800.0" prefWidth="140.0" spacing="20.0" style="-fx-background-color: #004332;">
-        <Button fx:id="home_btn" onAction="#handleHomeButton" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555; -fx-font-size: 36;" text="🏠" />
-        <Button fx:id="menue_btn" onAction="#handleMenuButton" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555; -fx-font-size: 36;" text="🍴" />
-        <Button fx:id="orders_btn" onAction="#handleOrdersButton" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555; -fx-font-size: 36;" text="📦" />
-        <Button fx:id="users_btn" onAction="#handleUsersButton" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555; -fx-font-size: 36;" text="👥" />
-        <Button fx:id="table_btn" onAction="#handleTableButton" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555; -fx-font-size: 36;" text="📋" />
+        <Button fx:id="home_btn" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="🏠Home" onAction="#handleHomeButton" />
+        <Button fx:id="menue_btn" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="🍴Menu" onAction="#handleMenuButton" />
+        <Button fx:id="orders_btn" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="📦Orders" onAction="#handleOrdersButton" />
+        <Button fx:id="users_btn" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="👥Users" onAction="#handleUsersButton" />
+        <Button fx:id="table_btn" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="📋Table" onAction="#handleTableButton" />
     </VBox>
 
     <!-- Main Content -->

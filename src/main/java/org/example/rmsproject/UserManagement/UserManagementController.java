@@ -129,4 +129,49 @@ public class UserManagementController {
         }
     }
 
+    public void handleMenuButton(ActionEvent actionEvent) {
+        try {
+            // Loading the FXML file for the HomePage
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/MenuView/MenuMangment.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void handleOrdersButton(ActionEvent actionEvent) {
+        System.out.println("Orders button clicked");
+    }
+
+    public void handleUsersButton(ActionEvent actionEvent) {
+        try {
+            // Loading the FXML file for the HomePage
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/UserManagement/UserManagement.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void handleTableButton(ActionEvent actionEvent) {
+        try {
+            // Loading the FXML file for the HomePage
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Table/TableManagementDashboard.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

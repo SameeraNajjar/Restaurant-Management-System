@@ -11,13 +11,13 @@
 
 <AnchorPane prefHeight="1024.0" prefWidth="1400.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.UserManagement.UserManagementController">
 
-    <VBox fx:id="sidebar" alignment="TOP_CENTER" layoutX="-1.0" prefHeight="1024.0" prefWidth="139.0" spacing="40.0" style="-fx-background-color: #004332;">
+    <VBox fx:id="sidebar" alignment="TOP_CENTER" layoutX="-1.0" prefHeight="1024.0" prefWidth="139.0" spacing="50.0" style="-fx-background-color: #004332;">
         <Region fx:id="logoRegion" prefHeight="150.0" prefWidth="150.0" style="-fx-background-size: cover; -fx-background-position: center; -fx-background-repeat: no-repeat;" />
-        <Button fx:id="home_btn" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555; -fx-font-size: 36;" text="🏠" onAction="#handleHomeButton" />
-        <Button fx:id="menue_btn" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555; -fx-font-size: 30;" text="🍴" />
-        <Button fx:id="orders_btn" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555; -fx-font-size: 30;" text="📦" />
-        <Button fx:id="users_btn" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555; -fx-font-size: 30;" text="👥" />
-        <Button fx:id="table_btn" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555; -fx-font-size: 30;" text="📋" />
+        <Button fx:id="home_btn" onAction="#handleHomeButton" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="🏠Home" />
+        <Button fx:id="menue_btn" onAction="#handleMenuButton" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="🍴Menu" />
+        <Button fx:id="orders_btn" onAction="#handleOrdersButton" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="📦Orders" />
+        <Button fx:id="users_btn" onAction="#handleUsersButton" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="👥Users" />
+        <Button fx:id="table_btn" onAction="#handleTableButton" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="📋Table" />
     </VBox>
 
     <VBox fx:id="userListContainer" layoutX="328.0" layoutY="90.0" spacing="30.0">
@@ -30,22 +30,45 @@
 
     <VBox fx:id="userDetailsContainer" layoutX="901.0" layoutY="170.0" prefHeight="822.0" prefWidth="498.0" spacing="30.0" style="-fx-background-color: #004332; -fx-text-fill: #B89555;">
         <Label fx:id="usernameLabel" prefHeight="80.0" prefWidth="180.0" style="-fx-font-size: 30; -fx-text-fill: #B89555;" text="USERNAME" />
-        <Region fx:id="userImageRegion" prefHeight="200.0" prefWidth="200.0" style="-fx-background-size: cover; -fx-border-radius: 100; -fx-background-radius: 100;" />
-        <Label fx:id="yearsOfWorkLabel" style="-fx-text-fill: #B89555;" text="Years of Work:" />
-        <Label fx:id="salaryLabel" style="-fx-text-fill: #B89555;" text="Salary:" />
-        <Label fx:id="ageLabel" style="-fx-text-fill: #B89555;" text="Age:" />
-        <Label fx:id="positionLabel" style="-fx-text-fill: #B89555;" text="Position:" />
-        <Label fx:id="workingHoursLabel" style="-fx-text-fill: #B89555;" text="Working Hours:" />
+        <Region fx:id="userImageRegion" prefHeight="98.0" prefWidth="498.0" style="-fx-background-size: cover; -fx-border-radius: 100; -fx-background-radius: 100;" />
+        <Label fx:id="yearsOfWorkLabel" style="-fx-text-fill: #B89555;" text="Years of Work:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <Label fx:id="salaryLabel" style="-fx-text-fill: #B89555;" text="Salary:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <Label fx:id="ageLabel" style="-fx-text-fill: #B89555;" text="Age:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <Label fx:id="positionLabel" style="-fx-text-fill: #B89555;" text="Position:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <Label fx:id="workingHoursLabel" style="-fx-text-fill: #B89555;" text="Working Hours:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+   
+       <HBox prefHeight="207.0" prefWidth="498.0" spacing="100.0">
+           <Button alignment="CENTER" layoutX="20.0" layoutY="80.0" maxWidth="180.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555;" text="Update User Info">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+           <Button layoutX="20.0" layoutY="80.0" maxWidth="180.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555;" text="Delete User">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+       </HBox>
     </VBox>
 
-    <HBox layoutY="1000" prefHeight="250.0" prefWidth="498.0" spacing="150.0">
-        <Button alignment="CENTER" layoutX="20.0" layoutY="80.0" maxWidth="180.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555;" text="Update User Info" />
-        <Button layoutX="20.0" layoutY="80.0" maxWidth="180.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555;" text="Delete User" />
-    </HBox>
-
-    <Button layoutX="1133.0" layoutY="27.0" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555;" text="Add User    +">
+    <Button fx:id="addUser_btn" layoutX="1133.0" layoutY="27.0" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555;" text="Add User    +" AnchorPane.rightAnchor="20.0">
         <font>
-            <Font size="30.0" />
+            <Font size="24.0" />
         </font>
     </Button>
 </AnchorPane>

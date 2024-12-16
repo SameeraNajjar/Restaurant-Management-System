@@ -17,9 +17,16 @@ public class AddReservationController {
     @FXML
         private Text noTablesAvailable;
 
+
+    @FXML
     public void Find_Table(ActionEvent actionE) throws IOException {
         noTablesAvailable.setText("No tables are available yet.");
+
+        // Create an FXMLLoader instance and load the FXML file
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Reservation_Failed_message.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+
+        // Create and configure the stage
         Stage stage = new Stage();
         stage.setTitle("Failed! Message");
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -27,9 +34,5 @@ public class AddReservationController {
         stage.show();
     }
 
-    public void closeMessageF(ActionEvent action) {
-        Stage stage = (Stage) ((Button) action.getSource()).getScene().getWindow();
-        stage.close();
-    }
 }
 
