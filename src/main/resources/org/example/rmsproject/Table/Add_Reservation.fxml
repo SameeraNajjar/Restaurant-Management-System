@@ -105,7 +105,7 @@
     </Text>
     <StackPane layoutX="1120.0" layoutY="37.0" />
     <ImageView fitHeight="76.0" fitWidth="82.0" layoutX="1130.0" layoutY="33.0">
-        <Image url="@../../../../images/staff.png" />
+        <Image url="@../../../../images/custom-restaurant-tables.jpg" />
         <clip>
             <Circle centerX="41" centerY="38" radius="38" />
         </clip>

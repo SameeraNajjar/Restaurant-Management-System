@@ -1,63 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<AnchorPane prefHeight="1024.0" prefWidth="1242.0" style="-fx-background-color: #F1F0ED;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <TableView layoutX="65.0" layoutY="194.0" prefHeight="456.0" prefWidth="1011.0">
-        <columns>
-          <TableColumn prefWidth="296.0000419616699" style="-fx-color: #B89555;" text="CustomerID" />
-          <TableColumn prefWidth="403.1999816894531" style="-fx-color: #B89555;" text="Customer Name" />
-            <TableColumn prefWidth="317.599951171875" style="-fx-color: #B89555;" text="Phone" />
-        </columns>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.ReservationController.ReservationsManagementController">
+   <center>
+      <TableView prefHeight="529.0" prefWidth="1204.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn prefWidth="202.13330459594727" style="-fx-color: #B89555;" text="Customer ID" />
+            <TableColumn prefWidth="298.3999938964844" style="-fx-color: #B89555;" text="Customer Name" />
+            <TableColumn prefWidth="276.7999572753906" style="-fx-color: #B89555;" text="Phone" />
+            <TableColumn minWidth="0.0" prefWidth="425.60003662109375" style="-fx-color: #B89555;" text="Action">
+               <columns>
+                  <TableColumn prefWidth="221.06683349609375" text="Delete" />
+                  <TableColumn prefWidth="205.333251953125" text="Edit" />
+               </columns>
+            </TableColumn>
+         </columns>
+         <BorderPane.margin>
+            <Insets left="20.0" right="20.0" />
+         </BorderPane.margin>
       </TableView>
-      <Pagination fx:id="pagination" layoutX="189.0" layoutY="735.0" prefHeight="66.0" prefWidth="379.0" style="-fx-border-color: #630C2F; -fx-background-color: #630C2F;" />
-      <Text fill="#b19251" layoutX="141.0" layoutY="773.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pages">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Text>
-      <AnchorPane layoutX="2.0" prefHeight="142.0" prefWidth="1242.0" style="-fx-background-color: #F1F0ED;">
+   </center>
+   <top>
+      <AnchorPane prefHeight="170.0" prefWidth="1244.0" BorderPane.alignment="CENTER">
          <children>
-            <Text fill="#b19251" layoutX="31.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Information" wrappingWidth="422.4000244140625">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Text>
-            <Pane layoutX="362.0" layoutY="87.0" prefHeight="27.0" prefWidth="46.0" style="-fx-background-color: #F1F0ED; -fx-background-radius: 40;" />
-            <TextField alignment="CENTER" layoutX="95.0" layoutY="101.0" prefHeight="35.0" prefWidth="213.0" promptText="Search" style="-fx-background-radius: 50; -fx-border-color: #630C2F; -fx-border-radius: 50; -fx-border-width: 2;">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </TextField>
-            <Pane layoutX="97.0" layoutY="105.0" prefHeight="27.0" prefWidth="46.0" style="-fx-background-color: #F1F0ED; -fx-background-radius: 40;">
+            <Pane layoutX="730.0" layoutY="111.0" prefHeight="44.0" prefWidth="498.0">
                <children>
-                  <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <TextField alignment="CENTER" prefHeight="44.0" prefWidth="507.0" promptText="Search" style="-fx-background-radius: 50; -fx-border-color: #630C2F; -fx-border-radius: 50; -fx-border-width: 2;" />
+                  <Pane layoutX="441.0" layoutY="2.0" prefHeight="40.0" prefWidth="62.0" style="-fx-background-radius: 40; -fx-border-radius: 40; -fx-background-color: #F1F0ED;" />
+                  <ImageView fitHeight="34.0" fitWidth="54.0" layoutX="458.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../images/search.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
+            <Text fill="#b19251" layoutX="19.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers  Management ">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
-      <Pane layoutX="941.0" layoutY="7.0" prefHeight="110.0" prefWidth="296.0">
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="299.0" prefWidth="1244.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutY="24.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="200.0" style="-fx-background-color: #F1F0ED;" text="Marcus Horizon" textFill="#b89555">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="118.0" fitWidth="82.0" layoutX="194.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../images/Marcus_Horizon.png" />
-               </image>
-            </ImageView>
+            <Pagination layoutX="841.0" layoutY="9.0" prefHeight="72.0" prefWidth="334.0" style="-fx-background-color: #630C2F;" />
+            <Button layoutX="178.0" layoutY="93.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" onAction="#openEditCust" text="testEdit" />
+            <Button layoutX="266.0" layoutY="93.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" onAction="#openDeleteCust" text="testDelete" />
          </children>
-      </Pane>
-   </children>
-</AnchorPane>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
