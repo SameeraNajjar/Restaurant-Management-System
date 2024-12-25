@@ -57,7 +57,7 @@
       </AnchorPane>
       <ImageView fitHeight="439.0" fitWidth="663.0" layoutX="743.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Image/h.png" />
+            <Image url="@../../../../images/h.png" />
          </image>
       </ImageView>
       <Label layoutX="757.0" layoutY="117.0" prefHeight="112.0" prefWidth="566.0" text="Registration" textFill="#b89555">

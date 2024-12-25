@@ -2,7 +2,6 @@ package org.example.rmsproject.UserManagement;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -48,7 +47,7 @@ public class UserManagementController {
 
     @FXML
     public void initialize() {
-        String logoPath = getClass().getResource("/data/images/logo.png").toExternalForm();
+        String logoPath = getClass().getResource("/images/logo.png").toExternalForm();
         logoRegion.setStyle(
                 "-fx-background-image: url('" + logoPath + "');" +
                         "-fx-background-size: 150% 150%;" +
@@ -56,11 +55,11 @@ public class UserManagementController {
                         "-fx-background-repeat: no-repeat;"
         );
 
-        addUserToList("Marcus Horizon", "4.7", "/data/images/person1.png");
-        addUserToList("Maria Elena", "4.9", "/data/images/person2.png");
-        addUserToList("Stefi Jessi", "3.5", "/data/images/person3.png");
-        addUserToList("Gerty Cori", "2.5", "/data/images/person4.png");
-        addUserToList("Diandra", "4.0", "/data/images/person5.png");
+        addUserToList("Marcus Horizon", "4.7", "/images/person1.png");
+        addUserToList("Maria Elena", "4.9", "/images/person2.png");
+        addUserToList("Stefi Jessi", "3.5", "/images/person3.png");
+        addUserToList("Gerty Cori", "2.5", "/images/person4.png");
+        addUserToList("Diandra", "4.0", "/images/person5.png");
     }
 
     public void addUserToList(String name, String rating, String imagePath) {
