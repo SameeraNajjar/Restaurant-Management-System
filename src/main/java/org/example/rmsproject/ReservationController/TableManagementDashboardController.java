@@ -3,10 +3,13 @@ package org.example.rmsproject.ReservationController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-
+import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,8 +20,7 @@ public class TableManagementDashboardController {
     private AnchorPane contentPane ;
 
     @FXML
-    private Button viewId, reservationsId, customerId, addId;
-
+    private Button  reservationsId, customerId, addId;
     private static final Logger LOGGER = Logger.getLogger(TableManagementDashboardController.class.getName());
     private Button activeButton = null;
 
@@ -35,20 +37,28 @@ public class TableManagementDashboardController {
 //    }
 
     @FXML
-    public void loadReservations(ActionEvent actionEvent) {
+    public void loadReservations(ActionEvent btn_event) {
         loadFXMLToContentPane("/org/example/rmsproject/Table/Reservations.fxml");
         updateButtonStyle(reservationsId);
     }
 
     @FXML
-    public void loadCustomer(ActionEvent actionEvent) {
+    public void loadHome(MouseEvent btn_event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/HomePage.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ((Node) btn_event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+    @FXML
+    public void loadCustomer(ActionEvent btn_event) {
         loadFXMLToContentPane("/org/example/rmsproject/Table/CustomerInfo.fxml");
         updateButtonStyle(customerId);
     }
 
     @FXML
     public void loadAdd(ActionEvent actionEvent) {
-        loadFXMLToContentPane("/org/example/rmsproject/Table/Add_Reservation.fxml");
+        loadFXMLToContentPane("/org/example/rmsproject/Table/Add_Reservation(Table_Check).fxml");
         updateButtonStyle(addId);
     }
 
