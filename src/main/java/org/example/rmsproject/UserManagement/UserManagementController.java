@@ -2,6 +2,7 @@ package org.example.rmsproject.UserManagement;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -47,7 +48,6 @@ public class UserManagementController {
 
     @FXML
     public void initialize() {
-
         String logoPath = getClass().getResource("/data/images/logo.png").toExternalForm();
         logoRegion.setStyle(
                 "-fx-background-image: url('" + logoPath + "');" +
@@ -56,15 +56,14 @@ public class UserManagementController {
                         "-fx-background-repeat: no-repeat;"
         );
 
-
         addUserToList("Marcus Horizon", "4.7", "/data/images/person1.png");
         addUserToList("Maria Elena", "4.9", "/data/images/person2.png");
         addUserToList("Stefi Jessi", "3.5", "/data/images/person3.png");
         addUserToList("Gerty Cori", "2.5", "/data/images/person4.png");
-        addUserToList(" Diandra ", "4.0", "/data/images/person5.png");
+        addUserToList("Diandra", "4.0", "/data/images/person5.png");
     }
 
-    private void addUserToList(String name, String rating, String imagePath) {
+    public void addUserToList(String name, String rating, String imagePath) {
         HBox userCard = new HBox();
         userCard.setSpacing(10);
         userCard.setStyle("-fx-background-color: #630C2F; -fx-border-radius: 5; -fx-padding: 10;");
@@ -89,21 +88,18 @@ public class UserManagementController {
         userDetails.getChildren().addAll(nameLabel, ratingLabel);
         userCard.getChildren().addAll(userImage, userDetails);
 
-
         userCard.setOnMouseClicked(event -> loadUserDetails(name, rating, imagePath));
 
         userListContainer.getChildren().add(userCard);
     }
 
     private void loadUserDetails(String name, String rating, String imagePath) {
-
         usernameLabel.setText(name);
         yearsOfWorkLabel.setText("Years of Work: " + (int) (Double.parseDouble(rating) * 2));
         salaryLabel.setText("Salary: " + "$" + (int) (Double.parseDouble(rating) * 1000));
         ageLabel.setText("Age: " + "30");
         positionLabel.setText("Position: garson");
         workingHoursLabel.setText("Working Hours: " + "40h/week");
-
 
         userImageRegion.setStyle(
                 "-fx-background-image: url('" + getClass().getResource(imagePath).toString() + "');" +
@@ -116,17 +112,73 @@ public class UserManagementController {
     }
 
     public void handleHomeButton(ActionEvent actionEvent) {
+        loadScene(actionEvent, "/org/example/rmsproject/HomePage.fxml");
+    }
+
+    public void handleMenuButton(ActionEvent actionEvent) {
+        loadScene(actionEvent, "/org/example/rmsproject/MenuView/MenuMangment.fxml");
+    }
+
+    public void handleOrdersButton(ActionEvent actionEvent) {
+        System.out.println("Orders button clicked");
+    }
+
+    public void handleUsersButton(ActionEvent actionEvent) {
+        loadScene(actionEvent, "/org/example/rmsproject/UserManagement/UserManagement.fxml");
+    }
+
+    public void handleTableButton(ActionEvent actionEvent) {
+        loadScene(actionEvent, "/org/example/rmsproject/Table/TableManagementDashboard.fxml");
+    }
+
+    public void handleAddUserButton(ActionEvent actionEvent) {
+        loadScene(actionEvent, "/org/example/rmsproject/UserManagement/AddUser.fxml");
+    }
+
+    public void handleUpdateUserInfoButton(ActionEvent actionEvent) {
+        loadScene(actionEvent, "/org/example/rmsproject/UserManagement/AddUser.fxml");
+    }
+
+    public void handleDeleteUserButton(ActionEvent actionEvent) {
+        // Display the confirmation popup
         try {
-            // Loading the FXML file for the HomePage
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/HomePage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/UserManagement/UserDeletedPopup.fxml"));
             Parent root = loader.load();
 
-            // Get the current stage and set the new scene
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+            // Remove the user from the list after showing the alert
+            Node sourceButton = (Node) actionEvent.getSource();
+            HBox userCard = (HBox) sourceButton.getParent(); // Get the user card that contains the button
+            userListContainer.getChildren().remove(userCard);
+
+        } catch (Exception e) {
+            System.out.println("Error loading UserDeletedPopup.fxml: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public void handleCloseAlert(ActionEvent actionEvent) {
+        // Close the popup alert
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    private void loadScene(ActionEvent actionEvent, String fxmlPath) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void handleBackButton(ActionEvent actionEvent) {
+        loadScene(actionEvent, "/org/example/rmsproject/HomePage.fxml");
     }
 
     public void handleMenuButton(ActionEvent actionEvent) {
