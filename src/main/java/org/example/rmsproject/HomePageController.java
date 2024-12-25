@@ -72,15 +72,24 @@ public class HomePageController {
     }
 
     @FXML
-    public void handleOrdersButton() {
-        System.out.println("Orders button clicked");
-        // Add logic to switch to the Orders page
+    public void handleOrdersButton(ActionEvent actionEvent) {
+        try {
+            // Correct path to the FXML file for orders
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/OrderView/AddOrder.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void handleUsersButton(ActionEvent actionEvent) {
         try {
-            // Loading the FXML file for the HomePage
+            // Correct path to the FXML file for users
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/UserManagement/UserManagement.fxml"));
             Parent root = loader.load();
 
@@ -90,7 +99,6 @@ public class HomePageController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // Add logic to switch to the Users page
     }
 
     @FXML
