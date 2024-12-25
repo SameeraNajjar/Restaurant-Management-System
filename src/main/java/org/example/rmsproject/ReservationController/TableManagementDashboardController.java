@@ -48,7 +48,7 @@ public class TableManagementDashboardController {
 
     @FXML
     public void loadAdd(ActionEvent actionEvent) {
-        loadFXMLToContentPane("/org/example/rmsproject/Table/Add_Reservation.fxml");
+        loadFXMLToContentPane("/org/example/rmsproject/Table/Add_Reservation(Table_Check).fxml");
         updateButtonStyle(addId);
     }
 
