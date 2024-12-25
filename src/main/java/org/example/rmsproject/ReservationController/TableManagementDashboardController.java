@@ -15,10 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TableManagementDashboardController {
-
     @FXML
     private AnchorPane contentPane ;
-
     @FXML
     private Button  reservationsId, customerId, addId;
     private static final Logger LOGGER = Logger.getLogger(TableManagementDashboardController.class.getName());
