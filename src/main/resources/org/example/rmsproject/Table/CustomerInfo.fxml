@@ -10,13 +10,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.ReservationController.ReservationsManagementController">
    <center>
-      <TableView prefHeight="529.0" prefWidth="1204.0" BorderPane.alignment="CENTER">
+      <TableView prefHeight="564.0" prefWidth="1204.0" BorderPane.alignment="CENTER">
          <columns>
             <TableColumn prefWidth="202.13330459594727" style="-fx-color: #B89555;" text="Customer ID" />
             <TableColumn prefWidth="298.3999938964844" style="-fx-color: #B89555;" text="Customer Name" />
@@ -34,33 +35,53 @@
       </TableView>
    </center>
    <top>
-      <AnchorPane prefHeight="170.0" prefWidth="1244.0" BorderPane.alignment="CENTER">
+      <HBox BorderPane.alignment="CENTER">
          <children>
-            <Pane layoutX="701.0" layoutY="111.0" prefHeight="44.0" prefWidth="498.0">
+            <AnchorPane prefHeight="172.0" prefWidth="1244.0">
                <children>
-                  <TextField alignment="CENTER" prefHeight="44.0" prefWidth="507.0" promptText="Search" style="-fx-background-radius: 50; -fx-border-color: #630C2F; -fx-border-radius: 50; -fx-border-width: 2;" />
-                  <Pane layoutX="442.0" layoutY="2.0" prefHeight="40.0" prefWidth="62.0" style="-fx-background-radius: 40; -fx-border-radius: 40; -fx-background-color: #F1F0ED;" />
-                  <ImageView fitHeight="34.0" fitWidth="54.0" layoutX="458.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../images/search.png" />
-                     </image>
-                  </ImageView>
+                  <Pane layoutX="805.0" layoutY="116.0" prefHeight="44.0" prefWidth="406.0">
+                     <children>
+                        <TextField alignment="CENTER" layoutY="2.0" prefHeight="42.0" prefWidth="413.0" promptText="Search" style="-fx-background-radius: 50; -fx-border-color: #630C2F; -fx-border-radius: 50; -fx-border-width: 2;" />
+                        <Pane layoutX="348.0" layoutY="4.0" prefHeight="38.0" prefWidth="62.0" style="-fx-background-radius: 40; -fx-border-radius: 40; -fx-background-color: #F1F0ED;">
+                           <children>
+                              <ImageView fitHeight="34.0" fitWidth="54.0" layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../images/search.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Text fill="#b19251" layoutX="21.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers  Management ">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <HBox layoutX="68.0" layoutY="100.0" />
+                  <Button layoutX="79.0" layoutY="116.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="174.0" style="-fx-background-color: #B89555;" text="Add Customer" textFill="#630c2f">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../images/AddCustImg.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
-            </Pane>
-            <Text fill="#b19251" layoutX="19.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers  Management ">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Text>
+            </AnchorPane>
          </children>
-      </AnchorPane>
+      </HBox>
    </top>
    <bottom>
-      <AnchorPane prefHeight="299.0" prefWidth="1244.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="269.0" prefWidth="1244.0" BorderPane.alignment="CENTER">
          <children>
             <Pagination layoutX="841.0" layoutY="9.0" prefHeight="72.0" prefWidth="334.0" style="-fx-background-color: #630C2F;" />
-            <Button layoutX="178.0" layoutY="93.0" mnemonicParsing="false" onAction="#openEditCust" prefHeight="26.0" prefWidth="72.0" text="testEdit" />
-            <Button layoutX="266.0" layoutY="93.0" mnemonicParsing="false" onAction="#openDeleteCust" prefHeight="26.0" prefWidth="90.0" text="testDelete" />
+            <Button layoutX="159.0" layoutY="3.0" mnemonicParsing="false" onAction="#openEditCust" prefHeight="26.0" prefWidth="90.0" text="testEdit" />
+            <Button layoutX="255.0" layoutY="3.0" mnemonicParsing="false" onAction="#openDeleteCust" prefHeight="26.0" prefWidth="90.0" text="testDelete" />
          </children>
       </AnchorPane>
    </bottom>
