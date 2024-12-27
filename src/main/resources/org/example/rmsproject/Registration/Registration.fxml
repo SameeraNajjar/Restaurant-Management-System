@@ -15,7 +15,7 @@
    <children>
       <AnchorPane prefHeight="1024.0" prefWidth="720.0">
          <children>
-            <PasswordField fx:id="ConfirmPassword" layoutX="75.0" layoutY="537.0" prefHeight="33.0" prefWidth="370.0" />
+            <PasswordField fx:id="ConfirmPassword" layoutX="75.0" layoutY="537.0" onAction="#ConfirmPassword" prefHeight="33.0" prefWidth="370.0" />
             <PasswordField fx:id="Password" layoutX="75.0" layoutY="383.0" prefHeight="33.0" prefWidth="370.0" />
             <Label layoutX="99.0" layoutY="330.0" text="Password" textFill="#b89555">
                <font>
@@ -46,7 +46,8 @@
                </font>
             </Label>
             <ComboBox fx:id="ComboList" layoutX="75.0" layoutY="699.0" onAction="#handleSignUp" prefHeight="33.0" prefWidth="370.0" />
-            
+            <Label fx:id="lblpassword1" layoutX="309.0" layoutY="432.0" text="password do not match" textFill="#df0d0d" />
+            <Label fx:id="lblpassword2" layoutX="309.0" layoutY="584.0" text="password do not match" textFill="#df0d0d" />
             <Button fx:id="SignUp" layoutX="159.0" layoutY="822.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="174.0" style="-fx-background-color: #3b101b;" text="Sign Up" textFill="#fcfcfc" onAction="#onSignUpButtonClick">
                <font>
                   <Font name="System Bold Italic" size="18.0" />

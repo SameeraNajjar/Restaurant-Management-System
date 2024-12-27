@@ -17,15 +17,6 @@
 
         <!-- Annotated classes -->
         <mapping class="org.example.rmsproject.models.Users"/>
-        <mapping class="org.example.rmsproject.models.Category"/>
-        <mapping class="org.example.rmsproject.models.Customer"/>
-        <mapping class="org.example.rmsproject.models.Menu"/>
-        <mapping class="org.example.rmsproject.models.MenuItem"/>
-        <mapping class="org.example.rmsproject.models.Order"/>
-        <mapping class="org.example.rmsproject.models.OrderItem"/>
-        <mapping class="org.example.rmsproject.models.Permission"/>
-        <mapping class="org.example.rmsproject.models.Reservation"/>
-        <mapping class="org.example.rmsproject.models.Role"/>
-        <mapping class="org.example.rmsproject.models.ResturantTable"/>
+
     </session-factory>
 </hibernate-configuration>

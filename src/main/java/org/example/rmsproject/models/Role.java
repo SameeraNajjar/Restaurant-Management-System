@@ -2,6 +2,7 @@ package org.example.rmsproject.models;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -24,6 +25,8 @@ public class Role {
     )
     @Column(name = "permission_id")
     private Set<Integer> permissionIds = new HashSet<>();
+    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
+    private List<Users> users;
 
     public Role() {}
 
@@ -58,5 +61,13 @@ public class Role {
 
     public void setPermissionIds(Set<Integer> permissionIds) {
         this.permissionIds = permissionIds;
+    }
+
+    public List<Users> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<Users> users) {
+        this.users = users;
     }
 }

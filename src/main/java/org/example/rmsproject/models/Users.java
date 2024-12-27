@@ -11,16 +11,10 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "fullName")
+    private String fullName;
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @Column(name = "email")
     private String email;
@@ -29,9 +23,13 @@ public class Users {
     private String phone;
     @Column(name = "password")
     private String password;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id") // Links roles via user ID
-    private Set<Role> roles = new HashSet<>();
+
+    // @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //  @JoinColumn(name = "user_id") // Links roles via user ID
+    // private Set<Role> roles = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 
     public Users() {}
 
@@ -44,12 +42,13 @@ public class Users {
         this.id = id;
     }
 
+
     public String getName() {
-        return name;
+        return fullName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.fullName = name;
     }
 
     public String getEmail() {
@@ -68,11 +67,27 @@ public class Users {
         this.phone = phone;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public String getPassword() {
+        return password;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    // public Set<Role> getRoles() {
+    // return roles;
+    // }
+
+    // public void setRoles(Set<Role> roles) {
+    //    this.roles = roles;
+    //  }
 }
