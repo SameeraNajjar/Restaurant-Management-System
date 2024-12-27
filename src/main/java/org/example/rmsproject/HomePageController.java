@@ -89,11 +89,9 @@ public class HomePageController {
     @FXML
     public void handleUsersButton(ActionEvent actionEvent) {
         try {
-            // Correct path to the FXML file for users
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/UserManagement/UserManagement.fxml"));
             Parent root = loader.load();
 
-            // Get the current stage and set the new scene
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (Exception e) {

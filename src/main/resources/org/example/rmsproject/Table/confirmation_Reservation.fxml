@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="462.0" style="-fx-background-color: #F1F0ED;" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.rmsproject.ReservationController.AddReservationController">
+            fx:controller="org.example.rmsproject.Controllers.ReservationController.AddReservationController">
    <top>
       <AnchorPane prefHeight="55.0" prefWidth="463.0" style="-fx-background-color: #630C2F;"
                   BorderPane.alignment="CENTER">

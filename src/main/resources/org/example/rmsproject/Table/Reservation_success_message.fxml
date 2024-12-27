@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0"
             prefWidth="350.0" style="-fx-background-color: #630C2F;" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.rmsproject.ReservationController.AddReservationController">
+            fx:controller="org.example.rmsproject.Controllers.ReservationController.AddReservationController">
     <Text fill="#b19251" layoutX="110.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Success!">
         <font>
             <Font size="35.0"/>

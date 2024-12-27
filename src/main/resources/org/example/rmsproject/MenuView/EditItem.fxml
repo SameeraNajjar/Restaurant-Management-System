@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="BackgroundMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.MenuControllers.EditItemController">
+<AnchorPane fx:id="BackgroundMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.MenuControllers.EditItemController">
    <children>
       <Label fx:id="MenuTitle" text="  Menu Management" textFill="#c0a159">
          <font>

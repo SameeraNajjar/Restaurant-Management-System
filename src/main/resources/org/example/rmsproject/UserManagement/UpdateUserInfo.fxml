@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="BackgroundAddUser" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.UserManagement.AddUserController">
+<AnchorPane fx:id="BackgroundAddUser" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.UserManagement.UpdateUserController">
     <children>
         <!-- Page Title -->
         <Label fx:id="PageTitle" layoutX="149.0" layoutY="30.0" text="  User Management" textFill="#c0a159">
@@ -19,7 +19,7 @@
         <Line fx:id="LineUnderTitle" endX="1299.0" layoutX="149.0" layoutY="93.0" startX="-150.0" />
 
         <!-- Add User Section Title -->
-        <Label fx:id="SectionTitle" layoutX="54.0" layoutY="117.0" text="Add User" textFill="#c0a159">
+        <Label fx:id="SectionTitle" layoutX="54.0" layoutY="117.0" text="Update User info" textFill="#c0a159">
             <font>
                 <Font name="System Bold" size="40.0" />
             </font>

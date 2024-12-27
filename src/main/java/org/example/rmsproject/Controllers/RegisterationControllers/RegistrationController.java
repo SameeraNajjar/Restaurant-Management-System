@@ -1,4 +1,4 @@
-package org.example.rmsproject.RegisterationControllers;
+package org.example.rmsproject.Controllers.RegisterationControllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

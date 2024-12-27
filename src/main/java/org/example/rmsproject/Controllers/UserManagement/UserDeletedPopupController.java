@@ -1,4 +1,4 @@
-package org.example.rmsproject.UserManagement;
+package org.example.rmsproject.Controllers.UserManagement;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

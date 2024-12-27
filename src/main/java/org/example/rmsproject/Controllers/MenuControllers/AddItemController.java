@@ -1,15 +1,15 @@
-package org.example.rmsproject.MenuControllers;
+package org.example.rmsproject.Controllers.MenuControllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.Node;
+
 import java.io.IOException;
 
-public class EditItemController {
-
+public class AddItemController {
 
     public void handleSave(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/MenuView/MenuMangment.fxml"));
@@ -20,7 +20,6 @@ public class EditItemController {
         stage.show();
     }
 
-    // Handle Cancel Button Action
     public void handleCancel(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/MenuView/MenuMangment.fxml"));
         Parent root = loader.load();

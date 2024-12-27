@@ -1,4 +1,4 @@
-package org.example.rmsproject.ReservationController;
+package org.example.rmsproject.Controllers.ReservationController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
