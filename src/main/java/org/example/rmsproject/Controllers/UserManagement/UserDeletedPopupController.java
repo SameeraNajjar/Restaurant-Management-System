@@ -18,5 +18,4 @@ public class UserDeletedPopupController {
         stage.close();
     }
 
-    // Optional: You can add more methods if needed
 }

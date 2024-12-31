@@ -22,8 +22,24 @@ public class Users {
     @Column(name = "rate")
     private String rate;
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
+    @Column(name = "password")
+    private String password;
+    @Column(name = "role", nullable = false)
+    private String role;
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public Users() {}
     public int getId() {
         return id;
     }

@@ -1,4 +1,5 @@
 package org.example.rmsproject.models.interfaces.Users;
 
-public interface permesionDOA {
+public interface permesionDAO {
+
 }

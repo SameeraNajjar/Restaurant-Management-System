@@ -8,26 +8,22 @@ import java.util.Set;
 @Table(name = "Roles")
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue()
     private int id;
 
-    @Column(name = "role_name", nullable = false)
+    @Column(name = "role_name", nullable = false, unique = true)
     private String roleName;
 
-    @Column(name = "user_id", nullable = false)
-    private int userId; // Linking via user ID
-
-    @ElementCollection
-    @CollectionTable(
+    @ManyToMany
+    @JoinTable(
             name = "Role_Permissions",
-            joinColumns = @JoinColumn(name = "role_id")
+            joinColumns = @JoinColumn(name = "role_id"),
+            inverseJoinColumns = @JoinColumn(name = "permission_id")
     )
-    @Column(name = "permission_id")
-    private Set<Integer> permissionIds = new HashSet<>();
+    private Set<Permission> permissions = new HashSet<>();
 
     public Role() {}
 
-    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -44,19 +40,11 @@ public class Role {
         this.roleName = roleName;
     }
 
-    public int getUserId() {
-        return userId;
+    public Set<Permission> getPermissions() {
+        return permissions;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public Set<Integer> getPermissionIds() {
-        return permissionIds;
-    }
-
-    public void setPermissionIds(Set<Integer> permissionIds) {
-        this.permissionIds = permissionIds;
+    public void setPermissions(Set<Permission> permissions) {
+        this.permissions = permissions;
     }
 }

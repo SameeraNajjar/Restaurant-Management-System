@@ -46,13 +46,18 @@
                </font>
             </Label>
             <ComboBox fx:id="ComboList" layoutX="75.0" layoutY="699.0" onAction="#handleSignUp" prefHeight="33.0" prefWidth="370.0" />
-            
-            <Button fx:id="SignUp" layoutX="159.0" layoutY="822.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="174.0" style="-fx-background-color: #3b101b;" text="Sign Up" textFill="#fcfcfc" onAction="#onSignUpButtonClick">
+
+            <Button fx:id="SignUp" layoutX="490.0" layoutY="687.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="45.0" prefWidth="174.0" style="-fx-background-color: #3b101b;" text="Sign Up" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Button>
             <CheckBox fx:id="Chekin" layoutX="101.0" layoutY="762.0" mnemonicParsing="false" text="I agree to the terms and privacy policy" textFill="#b89555" />
+            <Label fx:id="haveAccount" layoutX="449.0" layoutY="751.0" onMouseClicked="#goToLogin" text="Already have an account?" textFill="#b89555">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <ImageView fitHeight="439.0" fitWidth="663.0" layoutX="743.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
@@ -63,11 +68,6 @@
       <Label layoutX="757.0" layoutY="117.0" prefHeight="112.0" prefWidth="566.0" text="Registration" textFill="#b89555">
          <font>
             <Font name="System Bold" size="96.0" />
-         </font>
-      </Label>
-      <Label fx:id="haveAccount" layoutX="801.0" layoutY="834.0" onMouseClicked="#goToLogin" text="Already have an account?" textFill="#b89555">
-         <font>
-            <Font size="18.0" />
          </font>
       </Label>
    </children>

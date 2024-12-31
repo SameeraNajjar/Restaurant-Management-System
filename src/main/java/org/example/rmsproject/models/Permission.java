@@ -6,28 +6,31 @@ import javax.persistence.*;
 @Table(name = "Permissions")
 public class Permission {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue()
     private int id;
 
-    @Column(name = "permission_name", nullable = false)
+    @Column(name = "permission_name", nullable = false, unique = true)
     private String permissionName;
 
     public Permission() {}
 
-    // Getters and Setters
     public int getId() {
+
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public String getPermissionName() {
+
         return permissionName;
     }
 
     public void setPermissionName(String permissionName) {
+
         this.permissionName = permissionName;
     }
 }

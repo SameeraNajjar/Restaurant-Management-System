@@ -12,8 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.rmsproject.models.Users;
-import org.example.rmsproject.models.interfaces.Users.UserDOA;
-import org.example.rmsproject.models.services.User.userDOAImp;
+import org.example.rmsproject.models.interfaces.Users.UserDAO;
+import org.example.rmsproject.models.services.User.userDAOImp;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,7 +38,7 @@ public class AddUserController implements Initializable {
     @FXML
     private Button cancelButton;
 
-    private UserDOA userDOA;
+    private UserDAO userDAO;
 
     private UserManagementController userManagementController;
 
@@ -48,7 +48,7 @@ public class AddUserController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        userDOA = new userDOAImp();
+        userDAO = new userDAOImp();
         saveUserButton.setOnAction(event -> handleSaveUserButton());
     }
 
@@ -65,12 +65,8 @@ public class AddUserController implements Initializable {
             users.setPhone(phoneField.getText().trim());
             users.setEmail(emailField.getText().trim());
 
-            userDOA.save(users);
+            userDAO.save(users);
             System.out.println("User added successfully!");
-
-//            if (userManagementController != null) {
-//                userManagementController.reloadUserData();
-//            }
 
             clearFields();
         } catch (Exception e) {
@@ -110,20 +106,51 @@ public class AddUserController implements Initializable {
             showAlert("Validation Error", "User name is required!", Alert.AlertType.ERROR);
             return false;
         }
-        if (emailField.getText() == null || !emailField.getText().contains("@")) {
+        if (nameField.getText().trim().length() < 3) {
+            showAlert("Validation Error", "User name must be at least 3 characters long!", Alert.AlertType.ERROR);
+            return false;
+        }
+
+        if (emailField.getText() == null || emailField.getText().trim().isEmpty()) {
+            showAlert("Validation Error", "Email is required!", Alert.AlertType.ERROR);
+            return false;
+        }
+        if (!emailField.getText().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
             showAlert("Validation Error", "A valid email is required!", Alert.AlertType.ERROR);
             return false;
         }
+
         if (phoneField.getText() == null || phoneField.getText().trim().isEmpty()) {
             showAlert("Validation Error", "User phone number is required!", Alert.AlertType.ERROR);
             return false;
         }
+        if (!phoneField.getText().matches("\\d+")) {
+            showAlert("Validation Error", "Phone number must contain only digits!", Alert.AlertType.ERROR);
+            return false;
+        }
+        if (phoneField.getText().trim().length() < 10 || phoneField.getText().trim().length() > 15) {
+            showAlert("Validation Error", "Phone number must be between 10 and 15 digits!", Alert.AlertType.ERROR);
+            return false;
+        }
+
         if (ratingField.getText() == null || ratingField.getText().trim().isEmpty()) {
             showAlert("Validation Error", "User rating is required!", Alert.AlertType.ERROR);
             return false;
         }
+        try {
+            int rating = Integer.parseInt(ratingField.getText().trim());
+            if (rating < 1 || rating > 5) {
+                showAlert("Validation Error", "Rating must be between 1 and 5!", Alert.AlertType.ERROR);
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            showAlert("Validation Error", "Rating must be a number!", Alert.AlertType.ERROR);
+            return false;
+        }
+
         return true;
     }
+
 
     private void showAlert(String title, String content, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);
