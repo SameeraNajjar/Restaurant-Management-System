@@ -26,23 +26,23 @@
         </Label>
 
         <!-- Name Field -->
-        <Label fx:id="NameLabel" layoutX="55.0" layoutY="250.0" text="Name" textFill="#c0a159">
+        <Label fx:id="NameLabel" layoutX="60.0" layoutY="250.0" text="Name" textFill="#c0a159">
             <font>
                 <Font size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="nameField" layoutX="250.0" layoutY="245.0" prefHeight="50.0" prefWidth="400.0" />
+        <TextField fx:id="nameField" layoutX="250.0" layoutY="250.0" prefHeight="50.0" prefWidth="400.0" />
 
         <!-- Rating Field -->
-        <Label fx:id="RatingLabel" layoutX="55.0" layoutY="350.0" text="Rating" textFill="#c0a159">
+        <Label fx:id="RatingLabel" layoutX="60.0" layoutY="350.0" text="Rating" textFill="#c0a159">
             <font>
                 <Font size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="ratingField" layoutX="250.0" layoutY="345.0" prefHeight="50.0" prefWidth="400.0" />
+        <TextField fx:id="ratingField" layoutX="250.0" layoutY="350.0" prefHeight="50.0" prefWidth="400.0" />
 
         <!-- Image Selection Section -->
-        <Label fx:id="ImagePathLabel" layoutX="55.0" layoutY="450.0" text="Email" textFill="#c0a159">
+        <Label fx:id="ImagePathLabel" layoutX="60.0" layoutY="450.0" text="Email" textFill="#c0a159">
             <font>
                 <Font size="30.0" />
             </font>
@@ -61,12 +61,12 @@
                 <Font size="19.0" />
             </font>
         </Button>
-        <TextField fx:id="emailField" layoutX="236.0" layoutY="437.0" prefHeight="50.0" prefWidth="400.0" />
-        <Label fx:id="ImagePathLabel1" layoutX="62.0" layoutY="522.0" text="Phone" textFill="#c0a159">
+        <TextField fx:id="emailField" layoutX="250.0" layoutY="450.0" prefHeight="50.0" prefWidth="400.0" />
+        <Label fx:id="ImagePathLabel1" layoutX="60.0" layoutY="550.0" text="Phone" textFill="#c0a159">
             <font>
                 <Font size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="phoneField" layoutX="236.0" layoutY="519.0" prefHeight="50.0" prefWidth="400.0" />
+        <TextField fx:id="phoneField" layoutX="250.0" layoutY="550.0" prefHeight="50.0" prefWidth="400.0" />
     </children>
 </AnchorPane>

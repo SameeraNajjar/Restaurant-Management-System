@@ -3,6 +3,7 @@ package org.example.rmsproject.Controllers.UserManagement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.rmsproject.Controllers.AbsController;
 import org.example.rmsproject.models.Users;
 import org.example.rmsproject.models.interfaces.Users.UserDOA;
 import org.example.rmsproject.models.services.User.userDOAImp;
@@ -17,7 +19,7 @@ import org.example.rmsproject.models.services.User.userDOAImp;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class UpdateUserController {
+public class UpdateUserController extends AbsController implements Initializable {
 
     @FXML
     private TextField nameField;
@@ -31,43 +33,45 @@ public class UpdateUserController {
     @FXML
     private TextField phoneField;
 
-    @FXML
-    private Button saveUserButton;
-
-    @FXML
-    private Button cancelButton;
-
     private UserDOA userDOA;
+    private Users user;
 
-//    @Override
-//    public void initialize(URL url, ResourceBundle resourceBundle) {
-//        userDOA = new userDOAImp();
-//        saveUserButton.setOnAction( event-> handleSaveUserButton());
-//
-//    }
+    public void setUser(Users user) {
+        this.user = user;
+        populateFields();
+    }
+    private void populateFields() {
+        if (user != null) {
+            nameField.setText(user.getName());
+            emailField.setText(user.getEmail());
+            phoneField.setText(user.getPhone());
+            ratingField.setText(user.getRate());
+        }
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.userDOA = new userDOAImp();
 
-
+    }
     @FXML
-    private void handleSaveUserButton( ) {
-        if (!validateInput()){
+    private void handleSaveUserButton(ActionEvent actionEvent) {
+        if (!validateInput()) {
             return;
         }
         try {
-            Users users = new Users();
+            user.setName(nameField.getText().trim());
+            user.setRate(ratingField.getText().trim());
+            user.setPhone(phoneField.getText().trim());
+            user.setEmail(emailField.getText().trim());
 
-            users.setName(nameField.getText().trim());
-            users.setRate(ratingField.getText().trim());
-            users.setPhone(phoneField.getText().trim());
-            users.setEmail(emailField.getText().trim());
-
-            userDOA.save(users);
-            System.out.println("user added successfully!");
-            clearFields();
-        }catch (Exception e) {
-            System.out.println("error in adding users!");
+            userDOA.update(user);
+            System.out.println("User info updated successfully!");
+            loadScene(actionEvent, "/org/example/rmsproject/UserManagement/UserManagement.fxml", null);
+        } catch (Exception e) {
+            System.out.println("Error updating user info!");
+            e.printStackTrace();
         }
     }
-
     @FXML
     public void handleCancelButton(ActionEvent actionEvent) {
         try {
@@ -87,12 +91,6 @@ public class UpdateUserController {
             System.out.println("Error loading UserManagement.fxml: " + e.getMessage());
             e.printStackTrace();
         }
-    }
-    private void clearFields() {
-        nameField.clear();
-        ratingField.clear();
-        phoneField.clear();
-        emailField.clear();
     }
     private boolean validateInput(){
         if(nameField.getText()== null || nameField.getText().trim().isEmpty()){
@@ -120,5 +118,4 @@ public class UpdateUserController {
         alert.setContentText(content);
         alert.showAndWait();
     }
-
 }

@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="BackgroundAddUser" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.UserManagement.UpdateUserController">
+<AnchorPane fx:id="BackgroundUpdateUser" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.UserManagement.UpdateUserController">
     <children>
         <!-- Page Title -->
         <Label fx:id="PageTitle" layoutX="149.0" layoutY="30.0" text="  User Management" textFill="#c0a159">
@@ -18,35 +18,44 @@
         <!-- Line Under Title -->
         <Line fx:id="LineUnderTitle" endX="1299.0" layoutX="149.0" layoutY="93.0" startX="-150.0" />
 
-        <!-- Add User Section Title -->
-        <Label fx:id="SectionTitle" layoutX="54.0" layoutY="117.0" text="Update User info" textFill="#c0a159">
+        <!-- Update User Section Title -->
+        <Label fx:id="SectionTitle" layoutX="54.0" layoutY="117.0" text="Update User Info" textFill="#c0a159">
             <font>
                 <Font name="System Bold" size="40.0" />
             </font>
         </Label>
 
         <!-- Name Field -->
-        <Label fx:id="NameLabel" layoutX="55.0" layoutY="250.0" text="Name" textFill="#c0a159">
+        <Label fx:id="NameLabel" layoutX="60.0" layoutY="250.0" text="Name" textFill="#c0a159">
             <font>
                 <Font size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="nameField" layoutX="250.0" layoutY="245.0" prefHeight="50.0" prefWidth="400.0" />
+        <TextField fx:id="nameField" layoutX="250.0" layoutY="250.0" prefHeight="50.0" prefWidth="400.0" />
 
         <!-- Rating Field -->
-        <Label fx:id="RatingLabel" layoutX="55.0" layoutY="350.0" text="Rating" textFill="#c0a159">
+        <Label fx:id="RateLabel" layoutX="60.0" layoutY="350.0" text="Rate" textFill="#c0a159">
             <font>
                 <Font size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="ratingField" layoutX="250.0" layoutY="345.0" prefHeight="50.0" prefWidth="400.0" />
+        <TextField fx:id="ratingField" layoutX="250.0" layoutY="350.0" prefHeight="50.0" prefWidth="400.0" />
 
-        <!-- Image Selection Section -->
-        <Label fx:id="ImagePathLabel" layoutX="55.0" layoutY="450.0" text="Email" textFill="#c0a159">
+        <!-- Email Field -->
+        <Label fx:id="EmailLabel" layoutX="60.0" layoutY="450.0" text="Email" textFill="#c0a159">
             <font>
                 <Font size="30.0" />
             </font>
         </Label>
+        <TextField fx:id="emailField" layoutX="250.0" layoutY="450.0" prefHeight="50.0" prefWidth="400.0" />
+
+        <!-- Phone Field -->
+        <Label fx:id="PhoneLabel" layoutX="60.0" layoutY="550.0" text="Phone" textFill="#c0a159">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+        <TextField fx:id="phoneField" layoutX="250.0" layoutY="550.0" prefHeight="50.0" prefWidth="400.0" />
 
         <!-- Save Button -->
         <Button fx:id="saveUserButton" layoutX="364.0" layoutY="705.0" mnemonicParsing="false" onAction="#handleSaveUserButton" prefHeight="45.0" prefWidth="144.0" style="-fx-background-color: #630C2F;" text="Save" textFill="WHITE">
@@ -61,12 +70,5 @@
                 <Font size="19.0" />
             </font>
         </Button>
-        <TextField fx:id="emailField" layoutX="236.0" layoutY="437.0" prefHeight="50.0" prefWidth="400.0" />
-        <Label fx:id="ImagePathLabel1" layoutX="62.0" layoutY="522.0" text="Phone" textFill="#c0a159">
-            <font>
-                <Font size="30.0" />
-            </font>
-        </Label>
-        <TextField fx:id="phoneField" layoutX="236.0" layoutY="519.0" prefHeight="50.0" prefWidth="400.0" />
     </children>
 </AnchorPane>

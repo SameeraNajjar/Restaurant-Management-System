@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-
 import java.util.List;
 
 public class userDOAImp implements UserDOA {
@@ -50,5 +49,35 @@ public class userDOAImp implements UserDOA {
             session.close();
         }
     }
+    @Override
+    public void delete(int id) {
+        try (Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            Users user = session.get(Users.class, id);
+            if (user != null) {
+                session.delete(user);
+                transaction.commit();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Error deleting user with ID: " + id, e);
+        }
+    }
+
+    @Override
+    public void update(Users user) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.update(user);
+            transaction.commit();
+        } catch (Exception e) {
+            transaction.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
 
 }
+
+
