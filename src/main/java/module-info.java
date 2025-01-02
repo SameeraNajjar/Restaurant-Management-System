@@ -11,8 +11,11 @@ module org.example.rmsproject {
     requires javafx.graphics;
     requires org.hibernate.orm.core;
     requires java.persistence;
+    requires jdk.jfr;
 
     //opens org.example.rmsproject.interfaces.models to org.hibernate.orm.core;
+
+    opens org.example.rmsproject.models to org.hibernate.orm.core;
 
     opens org.example.rmsproject to javafx.fxml;
     opens org.example.rmsproject.ReservationController to javafx.fxml;

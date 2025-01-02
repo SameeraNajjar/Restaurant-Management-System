@@ -4,28 +4,22 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="menus")
+@Table(name = "menu")
 public class Menu {
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
-
-    @OneToMany(mappedBy = "menu")
-    private List<Category> categories;
 
 
     public Menu() {
-
     }
-
 
     public Menu(String name, List<Category> categories) {
         this.name = name;
-        this.categories = categories;
+
     }
 
     public int getId() {
@@ -45,11 +39,5 @@ public class Menu {
         this.name = name;
     }
 
-    public List<Category> getCategories() {
-        return categories;
-    }
 
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
 }

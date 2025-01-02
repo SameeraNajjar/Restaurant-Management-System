@@ -1,42 +1,52 @@
 package org.example.rmsproject.models;
 
-
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="menu_items")
+@Table(name = "menuitem")
 public class MenuItem {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name="description")
+    @Column(name = "description")
     private String description;
 
-    @Column(name="price")
+    @Column(name = "price")
     private double price;
 
-    @Column(name="is_available")
+    @Column(name = "available")
     private boolean isAvailable;
 
-    // منشئ بدون وسائط
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private Category category; // العلاقة مع Category
+
+    @Transient
+    private StringProperty nameProperty;
+
+    // Constructors
     public MenuItem() {
-        // يمكن تركه فارغاً أو تعيين بعض القيم الافتراضية إذا كان ذلك مطلوباً
+        this.nameProperty = new SimpleStringProperty(this, "name", name);
     }
 
-    // منشئ مع وسائط (استخدامه عند الحاجة)
-    public MenuItem(String name, String description, double price, boolean isAvailable) {
+    // مُنشئ جديد يتطابق مع التوقيع المستخدم ويتضمن الفئة
+    public MenuItem(String name, String description, double price, boolean isAvailable, Category category) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.isAvailable = isAvailable;
+        this.category = category;  // تعيين الفئة
     }
 
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -45,13 +55,13 @@ public class MenuItem {
         this.id = id;
     }
 
-    // Getters and Setters
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+        this.nameProperty().set(name);
     }
 
     public String getDescription() {
@@ -76,5 +86,29 @@ public class MenuItem {
 
     public void setAvailable(boolean available) {
         isAvailable = available;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public StringProperty nameProperty() {
+        if (nameProperty == null) {
+            nameProperty = new SimpleStringProperty(this, "name", name);
+        }
+        return nameProperty;
+    }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", category=" + (category != null ? category.getName() : "No Category") +
+                '}';
     }
 }
