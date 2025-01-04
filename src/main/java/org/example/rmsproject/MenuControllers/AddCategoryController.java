@@ -15,8 +15,10 @@ import java.util.Optional;
 
 public class AddCategoryController {
 
+
     public TextField categoryNameField;
     private MenuManagementController menuManagementController;
+
 
     public void handleSaveButton(ActionEvent event) throws Exception {
         String categoryName = categoryNameField.getText().trim();

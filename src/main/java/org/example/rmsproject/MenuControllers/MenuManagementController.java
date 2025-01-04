@@ -195,16 +195,27 @@ public class MenuManagementController {
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Confirmation");
             alert.setHeaderText("Are you sure you want to delete this category?");
-            alert.setContentText("This action cannot be undone.");
+            alert.setContentText("This action will also delete all menu items associated with this category. This action cannot be undone.");
 
             alert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.OK) {
+                    // حذف جميع العناصر المرتبطة بالفئة
+                    ObservableList<MenuItem> relatedMenuItems = FXCollections.observableArrayList(menuItemDOA.getMenuItemsByCategory(selectedCategory));
+                    for (MenuItem menuItem : relatedMenuItems) {
+                        menuItemDOA.delete(menuItem);
+                    }
+
+                    // حذف الفئة نفسها
                     categoryDOA.delete(selectedCategory);
                     categoryTable.getItems().remove(selectedCategory);
+
+                    // تحديث جدول العناصر
+                    loadMenuItemData();
                 }
             });
         }
     }
+
 
     public void handleBackToHome(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/HomePage.fxml"));
