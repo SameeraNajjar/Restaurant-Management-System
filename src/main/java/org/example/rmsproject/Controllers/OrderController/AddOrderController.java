@@ -1,4 +1,4 @@
-package org.example.rmsproject.OrderController;
+package org.example.rmsproject.Controllers.OrderController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

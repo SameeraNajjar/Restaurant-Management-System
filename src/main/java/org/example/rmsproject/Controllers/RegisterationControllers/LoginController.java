@@ -1,4 +1,4 @@
-package org.example.rmsproject.RegisterationControllers;
+package org.example.rmsproject.Controllers.RegisterationControllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

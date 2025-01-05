@@ -18,15 +18,19 @@ module org.example.rmsproject {
     opens org.example.rmsproject.models to org.hibernate.orm.core;
 
     opens org.example.rmsproject to javafx.fxml;
-    opens org.example.rmsproject.ReservationController to javafx.fxml;
-    exports org.example.rmsproject.ReservationController;
+    opens org.example.rmsproject.Controllers.ReservationController to javafx.fxml;
+    exports org.example.rmsproject.Controllers.ReservationController;
     exports org.example.rmsproject;
-    exports org.example.rmsproject.MenuControllers;
-    opens org.example.rmsproject.MenuControllers to javafx.fxml;
-    exports org.example.rmsproject.RegisterationControllers;
-    opens org.example.rmsproject.RegisterationControllers to javafx.fxml;
-    exports org.example.rmsproject.UserManagement;
-    opens org.example.rmsproject.UserManagement to javafx.fxml;
-    exports org.example.rmsproject.OrderController to javafx.fxml;
-    opens org.example.rmsproject.OrderController to javafx.fxml;
+
+    exports org.example.rmsproject.Controllers.RegisterationControllers;
+    opens org.example.rmsproject.Controllers.RegisterationControllers to javafx.fxml;
+
+    exports org.example.rmsproject.Controllers.UserManagement;
+    opens org.example.rmsproject.Controllers.UserManagement to javafx.fxml;
+
+    exports org.example.rmsproject.Controllers.OrderController to javafx.fxml;
+    opens org.example.rmsproject.Controllers.OrderController to javafx.fxml;
+
+    exports org.example.rmsproject.Controllers.MenuControllers;
+    opens org.example.rmsproject.Controllers.MenuControllers to javafx.fxml;
 }

@@ -1,18 +1,26 @@
 package org.example.rmsproject.models;
 
+
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 public class Users {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int id;
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "phone")
+    private String phone;
+
+    @Column(name = "rate")
+    private String rate;
 
     public String getPassword() {
         return password;
@@ -22,24 +30,19 @@ public class Users {
         this.password = password;
     }
 
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "phone")
-    private String phone;
     @Column(name = "password")
     private String password;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id") // Links roles via user ID
-    private Set<Role> roles = new HashSet<>();
+    @Column(name = "role", nullable = false)
+    private String role;
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public Users() {}
-
-    // Getters and Setters
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -47,7 +50,6 @@ public class Users {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -55,7 +57,6 @@ public class Users {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -63,16 +64,14 @@ public class Users {
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public String getRate() {
+        return rate;
     }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setRate(String rate) {
+        this.rate = rate;
     }
 }

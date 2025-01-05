@@ -1,4 +1,4 @@
-package org.example.rmsproject.MenuControllers;
+package org.example.rmsproject.Controllers.MenuControllers;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;

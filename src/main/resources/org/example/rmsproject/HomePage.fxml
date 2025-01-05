@@ -7,43 +7,30 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.HomePageController">
-    <!-- Sidebar -->
-    <VBox alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="800.0" prefWidth="140.0" spacing="20.0" style="-fx-background-color: #004332;">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #003B27;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.HomePageController">
 
-        <Button fx:id="home_btn" onAction="#handleHomeButton" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="🏠Home" />
-        <Button fx:id="menue_btn" onAction="#handleMenuButton" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="🍴Menu" />
-        <Button fx:id="orders_btn" onAction="#handleOrdersButton" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="📦Orders" />
-        <Button fx:id="users_btn" onAction="#handleUsersButton" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="👥Users" />
-        <Button fx:id="table_btn" onAction="#handleTableButton" prefHeight="50.0" prefWidth="115.0" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-font-size: 20;" text="📋Table" />
-
+    <VBox alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="800.0" prefWidth="160.0" spacing="25.0" style="-fx-background-color: #003B27;">
+        <Button fx:id="home_btn" onAction="#handleHomeButton" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: #630C2F; -fx-text-fill: #c0a159; -fx-font-size: 22;" text="🏠 Home" />
+        <Button fx:id="menue_btn" onAction="#handleMenuButton" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: #630C2F; -fx-text-fill: #c0a159; -fx-font-size: 22;" text="🍴 Menu" />
+        <Button fx:id="orders_btn" onAction="#handleOrdersButton" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: #630C2F; -fx-text-fill: #c0a159; -fx-font-size: 22;" text="📦 Orders" />
+        <Button fx:id="users_btn" onAction="#handleUsersButton" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: #630C2F; -fx-text-fill: #c0a159; -fx-font-size: 22;" text="👥 Users" />
+        <Button fx:id="table_btn" onAction="#handleTableButton" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: #630C2F; -fx-text-fill: #c0a159; -fx-font-size: 22;" text="📋 Table" />
     </VBox>
 
     <!-- Main Content -->
-    <HBox alignment="CENTER" layoutX="140.0" layoutY="0.0" prefHeight="800.0" prefWidth="1200.0">
-        <Region fx:id="mainRegion" prefHeight="200.0" prefWidth="1100.0" style=" -fx-background-size: cover; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+    <HBox alignment="CENTER" layoutX="160.0" layoutY="0.0" prefHeight="800.0" prefWidth="1040.0">
+        <Region fx:id="mainRegion" prefHeight="800.0" prefWidth="1040.0" style="-fx-background-size: cover; -fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-color: #FFFFFF;">
             <HBox.margin>
                 <Insets />
-            </HBox.margin></Region>
+            </HBox.margin>
+        </Region>
     </HBox>
 
-    <!-- Top Right Icons -->
-    <HBox layoutX="1020.0" layoutY="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" spacing="0">
-        <Button fx:id="notificationsButton" onAction="#handleNotificationsButton" style="-fx-background-color: transparent; -fx-text-fill: #B89555; -fx-font-size: 36;" text="🔔">
-            <HBox.margin>
-                <Insets />
-            </HBox.margin>
-        </Button>
-        <Button fx:id="profileButton" onAction="#handleProfileButton" style="-fx-background-color: transparent; -fx-text-fill: #B89555; -fx-font-size: 36;" text="👤">
-            <HBox.margin>
-                <Insets />
-            </HBox.margin>
-        </Button>
-        <Button fx:id="settingsButton" onAction="#handleSettingsButton" style="-fx-background-color: transparent; -fx-text-fill: #B89555; -fx-font-size: 36;" text="⚙️">
-            <HBox.margin>
-                <Insets />
-            </HBox.margin>
-        </Button>
+    <HBox layoutX="1020.0" layoutY="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0" spacing="-20.0" alignment="CENTER">
+        <Button fx:id="notificationsButton" onAction="#handleNotificationsButton" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-text-fill: #B89555; -fx-font-size: 30;" text="🔔" />
+        <Button fx:id="profileButton" onAction="#handleProfileButton" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-text-fill: #B89555; -fx-font-size: 30;" text="👤" />
+        <Button fx:id="settingsButton" onAction="#handleSettingsButton" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: transparent; -fx-text-fill: #B89555; -fx-font-size: 30;" text="⚙️" />
     </HBox>
+
 
 </AnchorPane>

@@ -1,4 +1,4 @@
 package org.example.rmsproject.models.services.User;
 
-public class roleDOAImp {
+public class permesionDAOImp {
 }
