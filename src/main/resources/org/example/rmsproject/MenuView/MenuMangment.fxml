@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Priority?>
 
 <AnchorPane fx:id="BackgroundMenu" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.rmsproject.MenuControllers.MenuManagementController"
+            fx:controller="org.example.rmsproject.Controllers.MenuControllers.MenuManagementController"
             style="-fx-background-color: #004332;">
    <children>
       <!-- Make the content fill the available space -->

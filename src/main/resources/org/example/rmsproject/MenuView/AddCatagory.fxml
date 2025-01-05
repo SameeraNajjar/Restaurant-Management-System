@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="BackgroundMenu"
-            fx:controller="org.example.rmsproject.MenuControllers.AddCategoryController"
+            fx:controller="org.example.rmsproject.Controllers.MenuControllers.AddCategoryController"
             style="-fx-background-color: #004332;"
             minHeight="1200.0"
             xmlns="http://javafx.com/javafx/23.0.1"
