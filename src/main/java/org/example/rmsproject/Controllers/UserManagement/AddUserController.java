@@ -101,6 +101,7 @@ public class AddUserController implements Initializable {
         }
     }
 
+
     private void clearFields() {
         nameField.clear();
         ratingField.clear();

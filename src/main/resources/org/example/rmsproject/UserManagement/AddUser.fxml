@@ -64,6 +64,7 @@
         </Label>
         <ComboBox fx:id="roleComboBox" layoutX="300.0" layoutY="535.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" />
 
+
         <!-- Save Button -->
         <Button fx:id="saveUserButton" layoutX="300.0" layoutY="616.0" mnemonicParsing="false" onAction="#handleSaveUserButton" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #630C2F; -fx-text-fill: #FFFFFF; -fx-font-size: 20;">
             <text>Save</text>
