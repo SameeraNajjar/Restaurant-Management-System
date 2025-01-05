@@ -32,6 +32,7 @@ public class Users {
 
     @Column(name = "password")
     private String password;
+
     @Column(name = "role", nullable = false)
     private String role;
 
@@ -39,10 +40,14 @@ public class Users {
         this.role = role;
     }
 
-    public Users() {}
+    public Users() {
+    }
+
+    // Getters and Setters
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -50,6 +55,7 @@ public class Users {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -57,6 +63,7 @@ public class Users {
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -64,6 +71,7 @@ public class Users {
     public String getPhone() {
         return phone;
     }
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -71,6 +79,7 @@ public class Users {
     public String getRate() {
         return rate;
     }
+
     public void setRate(String rate) {
         this.rate = rate;
     }
