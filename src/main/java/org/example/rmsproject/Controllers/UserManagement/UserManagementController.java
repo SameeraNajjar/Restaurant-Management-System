@@ -77,22 +77,22 @@ public class UserManagementController extends AbsController implements Initializ
     }
 
 
-
     public void handleMenuButton(ActionEvent actionEvent) {
-        Users user=SessionManager.getLoggedInUser();
-        if (Objects.equals(user.getRole(), "Admin")){
+        loadScene(actionEvent, "/org/example/rmsproject/MenuView/MenuMangment.fxml", null);
+        Users user = SessionManager.getLoggedInUser();
+        if (Objects.equals(user.getRole(), "Admin")) {
             loadScene(actionEvent, "/org/example/rmsproject/MenuView/MenuMangment.fxml", null);
-        }
-        else{
+        } else {
             System.out.println("you dont have permission");
         }
     }
+
     public void handleUsersButton(ActionEvent actionEvent) {
-        Users user=SessionManager.getLoggedInUser();
+        loadScene(actionEvent, "/org/example/rmsproject/UserManagement/UserManagement.fxml", null);
+        Users user = SessionManager.getLoggedInUser();
         if (Objects.equals(user.getRole(), "Admin")) {
             loadScene(actionEvent, "/org/example/rmsproject/UserManagement/UserManagement.fxml", null);
-        }
-        else{
+        } else {
             System.out.println("you dont have permission");
         }
     }
@@ -105,6 +105,7 @@ public class UserManagementController extends AbsController implements Initializ
         loadScene(actionEvent, "/org/example/rmsproject/UserManagement/AddUser.fxml", null);
 
     }
+
     public void handleBackButton(ActionEvent actionEvent) {
         loadScene(actionEvent, "/org/example/rmsproject/HomePage.fxml", null);
     }
