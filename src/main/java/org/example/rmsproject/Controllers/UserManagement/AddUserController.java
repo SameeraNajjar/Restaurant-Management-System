@@ -7,10 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import org.example.rmsproject.models.Users;
 import org.example.rmsproject.models.interfaces.Users.UserDAO;
@@ -32,7 +29,8 @@ public class AddUserController implements Initializable {
 
     @FXML
     private TextField phoneField;
-
+    @FXML
+    private PasswordField passwordField;
     @FXML
     private Button saveUserButton;
 
@@ -72,7 +70,9 @@ public class AddUserController implements Initializable {
             users.setPhone(phoneField.getText().trim());
             users.setEmail(emailField.getText().trim());
             users.setRole(roleComboBox.getValue());
+            users.setPassword(passwordField.getText().trim());
             userDAO.save(users);
+
             System.out.println("User added successfully!");
 
             clearFields();
@@ -108,6 +108,7 @@ public class AddUserController implements Initializable {
         phoneField.clear();
         emailField.clear();
         roleComboBox.getSelectionModel().clearSelection();
+        passwordField.clear();
     }
 
     private boolean validateInput() {
@@ -141,7 +142,14 @@ public class AddUserController implements Initializable {
             showAlert("Validation Error", "Phone number must be between 10 and 15 digits!", Alert.AlertType.ERROR);
             return false;
         }
-
+        if (passwordField.getText() == null || passwordField.getText().trim().isEmpty()) {
+            showAlert("Validation Error", "Password is required!", Alert.AlertType.ERROR);
+            return false;
+        }
+        if (passwordField.getText().trim().length() < 6) {
+            showAlert("Validation Error", "Password must be at least 6 characters long!", Alert.AlertType.ERROR);
+            return false;
+        }
         if (ratingField.getText() == null || ratingField.getText().trim().isEmpty()) {
             showAlert("Validation Error", "User rating is required!", Alert.AlertType.ERROR);
             return false;
