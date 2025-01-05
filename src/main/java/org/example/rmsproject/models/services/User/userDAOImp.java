@@ -19,6 +19,10 @@ public class userDAOImp implements UserDAO {
     }
     @Override
     public void save(Users users) {
+        if (users.getPassword() == null || users.getPassword().isEmpty()) {
+            throw new IllegalArgumentException("Password cannot be null or empty");
+        }
+
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
 
@@ -26,15 +30,16 @@ public class userDAOImp implements UserDAO {
             transaction = session.beginTransaction();
             session.save(users);
             transaction.commit();
-        }catch (Exception e){
-            if(transaction != null) {
+        } catch (Exception e) {
+            if (transaction != null) {
                 transaction.rollback();
             }
-            throw new RuntimeException("Error in saving Users",e);
-        }finally {
+            throw new RuntimeException("Error in saving Users", e);
+        } finally {
             session.close();
         }
     }
+
     @Override
     public void saveNewUser(Users user) {
         Session session = sessionFactory.openSession();
@@ -83,11 +88,13 @@ public class userDAOImp implements UserDAO {
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
-            throw e;
+            e.printStackTrace();
+            throw new RuntimeException("Error updating user: " + user.getEmail(), e);  // Add context to the error
         } finally {
             session.close();
         }
     }
+
 
 
     @Override
@@ -122,4 +129,3 @@ public class userDAOImp implements UserDAO {
         return count > 0;
     }
 }
-

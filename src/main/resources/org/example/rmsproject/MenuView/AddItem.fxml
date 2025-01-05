@@ -10,7 +10,7 @@
             style="-fx-background-color: #004332;"
             xmlns="http://javafx.com/javafx/23.0.1"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.rmsproject.MenuControllers.AddItemController">
+            fx:controller="org.example.rmsproject.Controllers.MenuControllers.AddItemController">
 
    <children>
       <VBox spacing="20" AnchorPane.topAnchor="0.0"
