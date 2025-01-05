@@ -3,7 +3,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "order_items")
+@Table(name = "order_item")
 public class OrderItem {
 
     @Id
@@ -18,7 +18,6 @@ public class OrderItem {
 
     @Column(name = "price", nullable = false)
     private double price;
-
 
     @ManyToMany(mappedBy = "items")
     private List<Order> orders;
