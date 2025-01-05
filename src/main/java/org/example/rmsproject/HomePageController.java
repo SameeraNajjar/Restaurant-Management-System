@@ -7,8 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
@@ -43,7 +41,7 @@ public class HomePageController {
 
     @FXML
     public void initialize() {
-        String imgPath = getClass().getResource("/data/images/logo.png").toExternalForm();
+        String imgPath = getClass().getResource("/images/logo.png").toExternalForm();
         mainRegion.setStyle(
                 "-fx-background-image: url('" + imgPath + "'); " +
                         "-fx-background-size: 150% 80%;" +
@@ -59,22 +57,25 @@ public class HomePageController {
     }
 
     @FXML
-    public void handleMenuButton() {
-        System.out.println("Menu button clicked");
-        // Add logic to switch to the Menu page
+    public void handleMenuButton(ActionEvent actionEvent) {
+            try {
+                // Loading the FXML file for the HomePage
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/MenuView/MenuMangment.fxml"));
+                Parent root = loader.load();
+
+                // Get the current stage and set the new scene
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
     }
 
     @FXML
-    public void handleOrdersButton() {
-        System.out.println("Orders button clicked");
-        // Add logic to switch to the Orders page
-    }
-
-    @FXML
-    public void handleUsersButton(ActionEvent actionEvent) {
+    public void handleOrdersButton(ActionEvent actionEvent) {
         try {
-            // Loading the FXML file for the HomePage
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/UserManagement.fxml"));
+            // Correct path to the FXML file for orders
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/OrderView/AddOrder.fxml"));
             Parent root = loader.load();
 
             // Get the current stage and set the new scene
@@ -83,13 +84,34 @@ public class HomePageController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // Add logic to switch to the Users page
     }
 
     @FXML
-    public void handleTableButton() {
-        System.out.println("Table button clicked");
-        // Add logic to switch to the Table page
+    public void handleUsersButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/UserManagement/UserManagement.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void handleTableButton(ActionEvent actionEvent) {
+            try {
+                // Loading the FXML file for the HomePage
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Table/TableManagementDashboard.fxml"));
+                Parent root = loader.load();
+
+                // Get the current stage and set the new scene
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
     }
 
     @FXML

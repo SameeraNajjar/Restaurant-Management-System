@@ -1,70 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="BackgroundMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.MenuControllers.AddItemController">
+<AnchorPane fx:id="BackgroundMenu"
+            style="-fx-background-color: #004332;"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.rmsproject.Controllers.MenuControllers.AddItemController">
+
    <children>
-      <Label fx:id="MenuTitle" text="  Menu Management" textFill="#c0a159">
-         <font>
-            <Font name="System Bold" size="45.0" />
-         </font>
-      </Label>
-      <Line fx:id="LineUnderTitle" endX="1299.0" layoutX="149.0" layoutY="93.0" startX="-150.0" />
-      <Label layoutX="54.0" layoutY="117.0" text="Add Item" textFill="#c0a159">
-         <font>
-            <Font name="System Bold" size="40.0" />
-         </font>
-      </Label>
-      <Label fx:id="MenuItemSection" layoutX="84.0" layoutY="221.0" prefHeight="58.0" prefWidth="407.0" text="Item Name" textFill="#c0a159">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </Label>
-      <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="992.0" layoutY="866.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="144.0" style="-fx-background-color: #630C2F;" text="Save" textFill="WHITE" onAction="#handleSave">
-         <font>
-            <Font size="19.0" />
-         </font>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Button>
-      <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="1247.0" layoutY="867.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="144.0" style="-fx-background-color: #630C2F;" text="Cancel" textFill="WHITE" onAction="#handleCancel">
-         <font>
-            <Font size="19.0" />
-         </font>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Button>
-      <TextField layoutX="414.0" layoutY="212.0" prefHeight="69.0" prefWidth="389.0" />
-      <Label fx:id="MenuItemSection1" layoutX="81.0" layoutY="370.0" prefHeight="58.0" prefWidth="407.0" text="Description" textFill="#c0a159">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </Label>
-      <Label fx:id="MenuItemSection11" layoutX="104.0" layoutY="702.0" prefHeight="58.0" prefWidth="407.0" text="Price" textFill="#c0a159">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </Label>
-      <Label fx:id="MenuItemSection111" layoutX="82.0" layoutY="835.0" prefHeight="58.0" prefWidth="407.0" text="Availability" textFill="#c0a159">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </Label>
-      <TextField layoutX="416.0" layoutY="366.0" prefHeight="253.0" prefWidth="395.0" />
-      <TextField layoutX="420.0" layoutY="685.0" prefHeight="69.0" prefWidth="389.0" />
-      <ToggleButton layoutX="524.0" layoutY="862.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="YES|NO">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </ToggleButton>
+      <VBox spacing="20" AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0">
+
+         <!-- Header Section -->
+         <VBox spacing="10">
+            <padding>
+               <Insets top="30" left="50" right="50"/>
+            </padding>
+
+            <Label fx:id="MenuTitle" text="  Menu Management" textFill="#c0a159">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Label>
+
+            <AnchorPane>
+               <Line fx:id="LineUnderTitle"
+                     startX="0"
+                     endX="1200"
+                     stroke="#c0a159"
+                     strokeWidth="2.0"
+                     AnchorPane.leftAnchor="0.0"
+                     AnchorPane.rightAnchor="0.0"/>
+            </AnchorPane>
+         </VBox>
+
+         <!-- Scrollable Form Content -->
+         <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background: #004332; -fx-background-color: transparent;">
+            <VBox spacing="20">
+               <padding>
+                  <Insets left="50" right="50" bottom="30"/>
+               </padding>
+
+               <Label text="Add Item" textFill="#c0a159">
+                  <font>
+                     <Font name="System Bold" size="40.0" />
+                  </font>
+               </Label>
+
+               <!-- Form Fields -->
+               <VBox spacing="30">
+                  <!-- Item Name -->
+                  <GridPane hgap="20" vgap="10">
+                     <columnConstraints>
+                        <ColumnConstraints minWidth="300" maxWidth="400" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="300" />
+                     </columnConstraints>
+
+                     <!-- Item Name -->
+                     <Label text="Item Name" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <font><Font size="35.0" /></font>
+                     </Label>
+                     <TextField fx:id="itemNameField" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                minHeight="69" maxWidth="500"/>
+
+                     <!-- Description -->
+                     <Label text="Description" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <font><Font size="35.0" /></font>
+                     </Label>
+                     <TextField fx:id="descriptionField" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                                minHeight="150" maxWidth="500"/>
+
+                     <!-- Price -->
+                     <Label text="Price" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <font><Font size="35.0" /></font>
+                     </Label>
+                     <TextField fx:id="priceField" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                                minHeight="69" maxWidth="500"/>
+
+                     <!-- Availability -->
+                     <Label text="Availability" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <font><Font size="35.0" /></font>
+                     </Label>
+                     <CheckBox fx:id="availabilityToggle" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <font><Font size="15.0" /></font>
+                     </CheckBox>
+
+                     <!-- Category -->
+                     <Label text="Category" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                        <font><Font size="35.0" /></font>
+                     </Label>
+                     <ComboBox fx:id="categoryComboBox" GridPane.columnIndex="1" GridPane.rowIndex="4"
+                               minHeight="40" maxWidth="500"/>
+                  </GridPane>
+
+                  <!-- Buttons -->
+                  <HBox spacing="20" alignment="CENTER_RIGHT">
+                     <VBox.margin>
+                        <Insets top="30"/>
+                     </VBox.margin>
+
+                     <Button fx:id="saveButton"
+                             onAction="#handleSaveButton"
+                             minHeight="45.0"
+                             minWidth="144.0"
+                             style="-fx-background-color: #630C2F;"
+                             text="Save"
+                             textFill="WHITE">
+                        <font>
+                           <Font size="19.0" />
+                        </font>
+                     </Button>
+
+                     <Button fx:id="cancelButton"
+                             onAction="#handleCancelButton"
+                             minHeight="45.0"
+                             minWidth="144.0"
+                             style="-fx-background-color: #630C2F;"
+                             text="Cancel"
+                             textFill="WHITE">
+                        <font>
+                           <Font size="19.0" />
+                        </font>
+                     </Button>
+                  </HBox>
+               </VBox>
+            </VBox>
+         </ScrollPane>
+      </VBox>
    </children>
 </AnchorPane>

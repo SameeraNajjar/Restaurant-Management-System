@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="462.0" style="-fx-background-color: #F1F0ED;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.ReservationController.ReservationsManagementController">
+   <top>
+      <AnchorPane prefHeight="55.0" prefWidth="463.0" style="-fx-background-color: #630C2F;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="172.0" layoutY="25.0" text="Edit Process" textFill="#b19251">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="464.0" prefWidth="310.0" style="-fx-background-color: #F1F0ED;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="20.0" layoutY="32.0" prefHeight="365.0" prefWidth="228.0">
+               <children>
+                  <Label text="Customer Name" textFill="#b19251">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField promptText="Customer Name" />
+                  <Label text="Date of booking" textFill="#b19251">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <DatePicker prefHeight="26.0" prefWidth="247.0" promptText="xx/xx/xxxx" />
+                  <Label text="Time of booking" textFill="#b19251">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField promptText="xx:xx" />
+                  <Label text="Table Number" textFill="#b19251">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField promptText="#" />
+                  <Label text="Number of people " textFill="#b19251">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField promptText="#" />
+                  <Label text="Status" textFill="#b19251">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <RadioButton mnemonicParsing="false" text="Done" textFill="#b19251">
+                           <HBox.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Not yet" textFill="#b19251">
+                           <HBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="67.0" layoutY="407.0" prefHeight="73.0" prefWidth="100.0">
+               <children>
+                  <Button disable="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #630C2F;" text="Edit" textFill="#b19251">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="EditProcessCancelbtn" mnemonicParsing="false" onAction="#closePopUp" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #004332;" text="Cancel" textFill="#b19251">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="472.0" prefWidth="176.0" style="-fx-background-color: #004332;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="127.0" fitWidth="184.0" layoutX="1.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/custom-restaurant-tables.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="12.0" layoutY="103.0" text="Edit Reservations Process" textFill="#b19251">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
