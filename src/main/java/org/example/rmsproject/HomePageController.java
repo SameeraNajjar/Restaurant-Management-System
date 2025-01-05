@@ -9,6 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+import org.example.rmsproject.models.Users;
+import org.example.rmsproject.util.SessionManager;
+
+import java.util.Objects;
 
 public class HomePageController {
 
@@ -58,7 +62,10 @@ public class HomePageController {
 
     @FXML
     public void handleMenuButton(ActionEvent actionEvent) {
-            try {
+        Users user= SessionManager.getLoggedInUser();
+
+        try {
+            if(Objects.equals(user.getRole(), "Admin")){
                 // Loading the FXML file for the HomePage
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/MenuView/MenuMangment.fxml"));
                 Parent root = loader.load();
@@ -66,9 +73,14 @@ public class HomePageController {
                 // Get the current stage and set the new scene
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
-            } catch (Exception e) {
-                e.printStackTrace();
             }
+            else {
+                System.out.println("no permission");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
