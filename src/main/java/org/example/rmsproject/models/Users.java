@@ -1,6 +1,5 @@
 package org.example.rmsproject.models;
 
-
 import javax.persistence.*;
 
 @Entity
@@ -32,6 +31,11 @@ public class Users {
 
     @Column(name = "password")
     private String password;
+
+    public String getRole() {
+        return role;
+    }
+
     @Column(name = "role", nullable = false)
     private String role;
 

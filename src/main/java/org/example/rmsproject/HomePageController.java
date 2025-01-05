@@ -88,15 +88,25 @@ public class HomePageController {
 
     @FXML
     public void handleUsersButton(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/UserManagement/UserManagement.fxml"));
-            Parent root = loader.load();
+        Users user= SessionManager.getLoggedInUser();
 
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-        } catch (Exception e) {
-            e.printStackTrace();
+            try {
+                if (Objects.equals(user.getRole(), "Admin")) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/UserManagement/UserManagement.fxml"));
+                Parent root = loader.load();
+
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                }
+                else {
+                    System.out.println("no permission");
+                }
+            }
+            catch (Exception e) {
+                e.printStackTrace();
         }
+
+
     }
 
     @FXML
