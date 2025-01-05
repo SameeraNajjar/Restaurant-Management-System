@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.rmsproject.models.Users;
@@ -37,6 +38,8 @@ public class AddUserController implements Initializable {
 
     @FXML
     private Button cancelButton;
+    @FXML
+    private ComboBox<String> roleComboBox;
 
     private UserDAO userDAO;
 
@@ -49,6 +52,10 @@ public class AddUserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userDAO = new userDAOImp();
+        saveUserButton.setOnAction(event -> handleSaveUserButton());
+        // Populate the role ComboBox with predefined roles
+        roleComboBox.getItems().addAll("Admin","Staff");
+
         saveUserButton.setOnAction(event -> handleSaveUserButton());
     }
 
@@ -64,7 +71,7 @@ public class AddUserController implements Initializable {
             users.setRate(ratingField.getText().trim());
             users.setPhone(phoneField.getText().trim());
             users.setEmail(emailField.getText().trim());
-
+            users.setRole(roleComboBox.getValue());
             userDAO.save(users);
             System.out.println("User added successfully!");
 
@@ -99,6 +106,7 @@ public class AddUserController implements Initializable {
         ratingField.clear();
         phoneField.clear();
         emailField.clear();
+        roleComboBox.getSelectionModel().clearSelection();
     }
 
     private boolean validateInput() {
@@ -145,6 +153,10 @@ public class AddUserController implements Initializable {
             }
         } catch (NumberFormatException e) {
             showAlert("Validation Error", "Rating must be a number!", Alert.AlertType.ERROR);
+            return false;
+        }
+        if (roleComboBox.getValue() == null || roleComboBox.getValue().trim().isEmpty()) {
+            showAlert("Validation Error", "User role is required!", Alert.AlertType.ERROR);
             return false;
         }
 
