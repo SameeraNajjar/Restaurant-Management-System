@@ -15,9 +15,10 @@ import org.example.rmsproject.models.Users;
 import org.example.rmsproject.models.services.User.userDAOImp;
 import org.example.rmsproject.models.interfaces.Users.UserDAO;
 import javafx.event.ActionEvent;
-
+import org.example.rmsproject.util.SessionManager;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
@@ -75,12 +76,25 @@ public class UserManagementController extends AbsController implements Initializ
         System.out.println("Orders button clicked");
     }
 
+
     public void handleMenuButton(ActionEvent actionEvent) {
         loadScene(actionEvent, "/org/example/rmsproject/MenuView/MenuMangment.fxml", null);
+        Users user = SessionManager.getLoggedInUser();
+        if (Objects.equals(user.getRole(), "Admin")) {
+            loadScene(actionEvent, "/org/example/rmsproject/MenuView/MenuMangment.fxml", null);
+        } else {
+            System.out.println("you dont have permission");
+        }
     }
 
     public void handleUsersButton(ActionEvent actionEvent) {
         loadScene(actionEvent, "/org/example/rmsproject/UserManagement/UserManagement.fxml", null);
+        Users user = SessionManager.getLoggedInUser();
+        if (Objects.equals(user.getRole(), "Admin")) {
+            loadScene(actionEvent, "/org/example/rmsproject/UserManagement/UserManagement.fxml", null);
+        } else {
+            System.out.println("you dont have permission");
+        }
     }
 
     public void handleTableButton(ActionEvent actionEvent) {
@@ -91,6 +105,7 @@ public class UserManagementController extends AbsController implements Initializ
         loadScene(actionEvent, "/org/example/rmsproject/UserManagement/AddUser.fxml", null);
 
     }
+
     public void handleBackButton(ActionEvent actionEvent) {
         loadScene(actionEvent, "/org/example/rmsproject/HomePage.fxml", null);
     }
