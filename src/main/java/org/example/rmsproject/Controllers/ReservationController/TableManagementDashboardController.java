@@ -21,19 +21,6 @@ public class TableManagementDashboardController {
     private Button  reservationsId, customerId, addId;
     private static final Logger LOGGER = Logger.getLogger(TableManagementDashboardController.class.getName());
     private Button activeButton = null;
-
-//    @FXML
-//    private void initialize() {
-//        loadFXMLToContentPane("VeiwTableReservationInfo.fxml");
-//        updateButtonStyle(viewId);
-//    }
-//
-//    @FXML
-//    public void loadView(ActionEvent actionEvent) {
-//        loadFXMLToContentPane("VeiwTableReservationInfo.fxml");
-//        updateButtonStyle(viewId);
-//    }
-
     @FXML
     public void loadReservations(ActionEvent btn_event) {
         loadFXMLToContentPane("/org/example/rmsproject/Table/Reservations.fxml");
@@ -60,12 +47,17 @@ public class TableManagementDashboardController {
         updateButtonStyle(addId);
     }
 
+    @FXML
     private void loadFXMLToContentPane(String fxmlFileName) {
         try {
             Parent fxml = FXMLLoader.load(TableManagementDashboardController.class.getResource(fxmlFileName));
             if (contentPane != null) {
                 contentPane.getChildren().clear();
                 contentPane.getChildren().add(fxml);
+                AnchorPane.setTopAnchor(fxml, 0.0);
+                AnchorPane.setBottomAnchor(fxml, 0.0);
+                AnchorPane.setLeftAnchor(fxml, 0.0);
+                AnchorPane.setRightAnchor(fxml, 0.0);
             }
         } catch (IOException ex) {
             LOGGER.log(Level.SEVERE, "Failed to load FXML file: " + fxmlFileName, ex);
