@@ -11,6 +11,8 @@ module org.example.rmsproject {
     requires org.hibernate.orm.core;
     requires java.persistence;
     requires jdk.jfr;
+    requires java.mail;
+    requires java.activation;
 
     // Allow Hibernate and JavaFX to reflectively access the models package
     opens org.example.rmsproject.models to org.hibernate.orm.core, javafx.base;
