@@ -31,7 +31,6 @@ public class resetPassword {
             return;
         }
 
-
         if (!newPassword.equals(confirmPassword)) {
             showAlert(AlertType.ERROR, "Error", "Passwords do not match!");
             return;
