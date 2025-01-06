@@ -28,7 +28,7 @@
     <!-- Main Content -->
     <VBox fx:id="userListContainer" layoutX="250.0" layoutY="50.0" prefWidth="1100.0" spacing="20.0" style="-fx-padding: 20;">
         <!-- Search Field -->
-        <TextField alignment="CENTER" prefHeight="50.0" prefWidth="250.0" promptText="Search for any user" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-border-color: transparent; -fx-font-size: 18;">
+        <TextField alignment="CENTER" fx:id="searchField" prefHeight="50.0" onKeyReleased="#handleSearch" prefWidth="250.0" promptText="Search for any user" style="-fx-background-color: #630C2F; -fx-text-fill: #B89555; -fx-border-color: transparent; -fx-font-size: 18;">
             <font>
                 <Font size="18.0" />
             </font>

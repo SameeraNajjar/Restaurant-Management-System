@@ -121,4 +121,33 @@ public class userDAOImp implements UserDAO {
         session.close();
         return count > 0;
     }
+
+    public Users findByEmail(String email) {
+        Session session = sessionFactory.openSession();
+        try {
+            String hql = "FROM Users WHERE email = :email";
+            Query<Users> query = session.createQuery(hql, Users.class);
+            query.setParameter("email", email);
+            return query.uniqueResult();
+        } catch (Exception e) {
+            throw new RuntimeException("Error fetching Librarian by email", e);
+        } finally {
+            session.close();
+        }
+    }
+    @Override
+    public List<Users> searchUsersByNameOrEmail(String keyword) {
+        Session session = sessionFactory.openSession();
+        try {
+            String hql = "FROM Users WHERE name LIKE :keyword OR email LIKE :keyword";
+            Query<Users> query = session.createQuery(hql, Users.class);
+            query.setParameter("keyword", "%" + keyword + "%");
+            return query.list();
+        } catch (Exception e) {
+            throw new RuntimeException("Error searching users", e);
+        } finally {
+            session.close();
+        }
+    }
+
 }

@@ -11,16 +11,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.example.rmsproject.models.Users;
 import org.example.rmsproject.models.services.User.userDAOImp;
+import org.example.rmsproject.util.SessionManager;
 
 import javax.swing.text.html.ImageView;
 import java.io.IOException;
 
 public class LoginController {
-    // userDOAImp userDOAImp0=new userDOAImp();
+
     @FXML
     private Label welcomeText;
     @FXML
-    private TextField email ;
+    private TextField email;
 
     @FXML
     private PasswordField password;
@@ -45,27 +46,25 @@ public class LoginController {
 
     @FXML
     private ImageView image;
+
+    userDAOImp userDOAImp0 = new userDAOImp();
+
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
-    userDAOImp userDOAImp0=new userDAOImp();
-
     @FXML
     public void handleHomeButton(ActionEvent actionEvent) {
-
         String emailInput = email.getText();
         String passwordInput = password.getText();
 
         if (isValidUser(emailInput, passwordInput)) {
-
+            Users user = userDOAImp0.findByEmailAndPassword(emailInput, passwordInput);
+            SessionManager.setLoggedInUser(user);
             try {
-                // Loading the FXML file for the HomePage
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/HomePage.fxml"));
                 Parent root = loader.load();
-
-                // Get the current stage and set the new scene
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
             } catch (Exception e) {
@@ -78,16 +77,11 @@ public class LoginController {
             alert.setContentText("Invalid email or password. Please try again.");
             alert.showAndWait();
         }
-
     }
-
-
-
 
     @FXML
     private void goToRegistration(MouseEvent event) {
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Registration/Registration.fxml"));
             Parent root = loader.load();
 
@@ -98,19 +92,31 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-    public void loDB(){
 
-        Users users= new Users();
+    @FXML
+    private void goToForgotPassword(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Registration/ForgetPassword.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loDB() {
+        Users users = new Users();
         users.setEmail("ameed@gmail.com");
         users.setPassword("123");
         userDOAImp0.save(users);
         System.out.println("DataBase is created successfully");
-
     }
+
     public boolean isValidUser(String email, String password) {
         Users user = userDOAImp0.findByEmailAndPassword(email, password);
-
         return user != null;
     }
-
 }

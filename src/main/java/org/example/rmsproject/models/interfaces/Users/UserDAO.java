@@ -20,4 +20,6 @@ public interface UserDAO {
     boolean isEmailExists(String email);
 
     void saveNewUser(Users user);
+
+    List<Users> searchUsersByNameOrEmail(String keyword);
 }

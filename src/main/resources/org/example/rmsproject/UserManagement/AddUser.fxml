@@ -1,82 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="BackgroundAddUser" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #003B27;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.UserManagement.AddUserController">
-    <children>
-        <!-- Page Title -->
-        <Label fx:id="PageTitle" layoutX="100.0" layoutY="30.0" text="User Management" textFill="#c0a159">
-            <font>
-                <Font name="System Bold" size="50.0" />
-            </font>
-        </Label>
-        <!-- Line Under Title -->
-        <Line fx:id="LineUnderTitle" endX="1200.0" layoutX="100.0" layoutY="95.0" startX="0.0" style="-fx-stroke: #c0a159; -fx-stroke-width: 2;" />
+<ScrollPane fitToWidth="true" style="-fx-background-color: #003B27;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="org.example.rmsproject.Controllers.UserManagement.AddUserController">
+    <content>
+        <VBox spacing="20" style="-fx-background-color: #003B27;">
+            <padding>
+                <Insets bottom="40" left="40" right="40" top="30" />
+            </padding>
 
-        <!-- Add User Section Title -->
-        <Label fx:id="SectionTitle" layoutX="100.0" layoutY="120.0" text="Add New User" textFill="#c0a159">
-            <font>
-                <Font name="System Bold" size="40.0" />
-            </font>
-        </Label>
+            <!-- Page Title Section -->
+            <VBox spacing="10">
+                <Label fx:id="PageTitle" text="User Management" textFill="#c0a159">
+                    <font>
+                        <Font name="System Bold" size="50.0" />
+                    </font>
+                </Label>
+                <Line fx:id="LineUnderTitle" endX="0" scaleX="1.0" style="-fx-stroke: #c0a159; -fx-stroke-width: 2;">
+                    <VBox.margin>
+                        <Insets bottom="20" />
+                    </VBox.margin>
+                </Line>
+            </VBox>
 
-        <!-- Name Field -->
-        <Label fx:id="NameLabel" layoutX="100.0" layoutY="220.0" text="Name" textFill="#c0a159">
-            <font>
-                <Font size="28.0" />
-            </font>
-        </Label>
-        <TextField fx:id="nameField" layoutX="300.0" layoutY="215.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" />
+            <Label fx:id="SectionTitle" text="Add New User" textFill="#c0a159">
+                <font>
+                    <Font name="System Bold" size="40.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="20" />
+                </VBox.margin>
+            </Label>
 
-        <!-- Rating Field -->
-        <Label fx:id="RatingLabel" layoutX="100.0" layoutY="300.0" text="Rating" textFill="#c0a159">
-            <font>
-                <Font size="28.0" />
-            </font>
-        </Label>
-        <TextField fx:id="ratingField" layoutX="300.0" layoutY="295.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" />
-        <!-- Password Field -->
-        <Label fx:id="PasswordLabel" layoutX="99.0" layoutY="545.0" text="Password" textFill="#c0a159">
-            <font>
-                <Font size="28.0" />
-            </font>
-        </Label>
-        <PasswordField fx:id="passwordField" layoutX="300.0" layoutY="535.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" />
+            <!-- Form Fields -->
+            <GridPane hgap="20" maxWidth="1000" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints maxWidth="200" minWidth="100" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="200" />
+                </columnConstraints>
 
-        <!-- Email Field -->
-        <Label fx:id="EmailLabel" layoutX="100.0" layoutY="380.0" text="Email" textFill="#c0a159">
-            <font>
-                <Font size="28.0" />
-            </font>
-        </Label>
-        <TextField fx:id="emailField" layoutX="300.0" layoutY="375.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" />
+                <!-- Name Field -->
+                <Label fx:id="NameLabel" text="Name" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <font><Font size="28.0" /></font>
+                </Label>
+                <TextField fx:id="nameField" minHeight="50" prefHeight="50.0" prefWidth="253.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-        <!-- Phone Field -->
-        <Label fx:id="PhoneLabel" layoutX="100.0" layoutY="460.0" text="Phone" textFill="#c0a159">
-            <font>
-                <Font size="28.0" />
-            </font>
-        </Label>
-        <TextField fx:id="phoneField" layoutX="300.0" layoutY="455.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" />
-        <Label fx:id="RoleLabel" layoutX="129.0" layoutY="623.0" text="Role" textFill="#c0a159">
-            <font>
-                <Font size="28.0" />
-            </font>
-        </Label>
-        <ComboBox fx:id="roleComboBox" layoutX="300.0" layoutY="618.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" />
+                <!-- Rating Field -->
+                <Label fx:id="RatingLabel" text="Rating" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <font><Font size="28.0" /></font>
+                </Label>
+                <TextField fx:id="ratingField" minHeight="50" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
+                <!-- Email Field -->
+                <Label fx:id="EmailLabel" text="Email" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <font><Font size="28.0" /></font>
+                </Label>
+                <TextField fx:id="emailField" minHeight="50" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-        <!-- Save Button -->
-        <Button fx:id="saveUserButton" layoutX="300.0" layoutY="709.0" mnemonicParsing="false" onAction="#handleSaveUserButton" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #630C2F; -fx-text-fill: #FFFFFF; -fx-font-size: 20;">
-            <text>Save</text>
-        </Button>
+                <!-- Phone Field -->
+                <Label fx:id="PhoneLabel" text="Phone" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <font><Font size="28.0" /></font>
+                </Label>
+                <TextField fx:id="phoneField" minHeight="50" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-        <!-- Cancel Button -->
-        <Button fx:id="cancelButton" layoutX="550.0" layoutY="719.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #630C2F; -fx-text-fill: #FFFFFF; -fx-font-size: 20;">
-            <text>Cancel</text>
-        </Button>
-    </children>
-</AnchorPane>
+                <!-- Password Field -->
+                <Label fx:id="PasswordLabel" text="Password" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                    <font><Font size="28.0" /></font>
+                </Label>
+                <PasswordField fx:id="passwordField" minHeight="50" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                <!-- Role Field -->
+                <Label fx:id="RoleLabel" text="Role" textFill="#c0a159" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                    <font><Font size="28.0" /></font>
+                </Label>
+                <ComboBox fx:id="roleComboBox" maxWidth="Infinity" minHeight="50" style="-fx-background-color: #FFFFFF; -fx-border-color: #c0a159;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+
+            <!-- Buttons -->
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <VBox.margin>
+                    <Insets top="20" />
+                </VBox.margin>
+                <Button fx:id="saveUserButton" minHeight="55" minWidth="200" onAction="#handleSaveUserButton" style="-fx-background-color: #630C2F; -fx-text-fill: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <text>Save</text>
+                </Button>
+                <Button fx:id="cancelButton" minHeight="55" minWidth="200" onAction="#handleCancelButton" style="-fx-background-color: #630C2F; -fx-text-fill: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <text>Cancel</text>
+                </Button>
+            </HBox>
+        </VBox>
+    </content>
+</ScrollPane>

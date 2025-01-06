@@ -32,6 +32,7 @@
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
+
       <Button fx:id="loginButton" layoutX="827.0" layoutY="596.0" mnemonicParsing="false"  onAction="#handleHomeButton"  prefHeight="32.0" prefWidth="340.0" style="-fx-background-color: #B89555;" text="Login" textFill="#630c2f">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -49,6 +50,8 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="forgotYourPassword" layoutX="818.0" layoutY="542.0" mnemonicParsing="false" style="-fx-background-color: #B89555;" text="Forgot your password?" textFill="#630c2f" />
+      <Button fx:id="forgotYourPassword" layoutX="818.0" layoutY="542.0" mnemonicParsing="false"
+              style="-fx-background-color: #B89555;" text="Forgot your password?" textFill="#630c2f"
+              onAction="#goToForgotPassword" />
    </children>
 </AnchorPane>
