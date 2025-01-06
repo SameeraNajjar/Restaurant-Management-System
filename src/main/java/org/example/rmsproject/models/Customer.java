@@ -2,40 +2,66 @@ package org.example.rmsproject.models;
 
 import javax.persistence.*;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
-@Table(name="Customer")
-
+@Table(name = "customer")
 public class Customer {
+
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name="name")
-    private String name;
-    @Column(name = "phone")
-    private String phone;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customer_id")
 
-    public int getId() {
-        return id;
+    private int customer_id;
+
+    @Column( name="customer_name",nullable = false, length = 100)
+    private String customerName;
+
+    @Column(name = "customer_phone", nullable = false, unique = true, length = 50)
+    private String customerPhone;
+
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Reservation> reservations;
+
+    public Customer() {}
+    public Customer(String customerName, String customerPhone) {
+        this.customerName = customerName;
+        this.customerPhone = customerPhone;
+    }
+    public Customer(String customerName) {
+        this.customerName = customerName;
+    }
+    // Getters and Setters
+    public int getCustomerId() {
+        return customer_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCustomerId(int customerId) {
+        this.customer_id = customerId;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public String getName() {
-        return name;
+    public String getCustomerPhone() {
+        return customerPhone;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }

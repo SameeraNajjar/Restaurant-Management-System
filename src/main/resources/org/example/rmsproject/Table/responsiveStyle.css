@@ -1,0 +1,37 @@
+/* Global styles */
+* {
+    font-family: 'Arial', sans-serif;
+    -fx-text-fill: #b19251;
+    -fx-alignment: center;
+}
+
+.table-view .column-header {
+    -fx-background-color: #320D14;
+    -fx-text-fill: #b19251;
+}
+/* Row hover styling */
+.table-row-cell:hover {
+    -fx-background-color: #f4e1b6; /* Hover color for rows */
+}
+
+
+.search-field {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-button {
+    background-color: #b19251;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.search-button:hover {
+    background-color: #8a6d39;
+}
+
+

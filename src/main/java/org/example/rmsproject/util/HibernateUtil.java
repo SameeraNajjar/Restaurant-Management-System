@@ -17,25 +17,25 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
-
+//= new Configuration().configure().buildSessionFactory();
     private static HibernateUtil instance = null;
-
     private static SessionFactory sessionFactory;
     private static StandardServiceRegistry serviceRegistry;
 
     private HibernateUtil(){
         Configuration configuration = new Configuration();
-        configuration.addAnnotatedClass(Users.class);
-        configuration.addAnnotatedClass(Menu.class);
-        configuration.addAnnotatedClass(MenuItem.class);
-        configuration.addAnnotatedClass(Category.class);
-        configuration.addAnnotatedClass(Customer.class);
-        configuration.addAnnotatedClass(Order.class);
-        configuration.addAnnotatedClass(OrderItem.class);
-        configuration.addAnnotatedClass(Permission.class);
-        configuration.addAnnotatedClass(Role.class);
         configuration.addAnnotatedClass(Reservation.class);
         configuration.addAnnotatedClass(ResturantTable.class);
+        configuration.addAnnotatedClass(Customer.class);
+//        configuration.addAnnotatedClass(Users.class);
+//        configuration.addAnnotatedClass(Menu.class);
+//        configuration.addAnnotatedClass(MenuItem.class);
+//        configuration.addAnnotatedClass(Category.class);
+//        configuration.addAnnotatedClass(Order.class);
+//        configuration.addAnnotatedClass(OrderItem.class);
+//        configuration.addAnnotatedClass(Permission.class);
+//        configuration.addAnnotatedClass(Role.class);
+
         configuration.configure();
         serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);

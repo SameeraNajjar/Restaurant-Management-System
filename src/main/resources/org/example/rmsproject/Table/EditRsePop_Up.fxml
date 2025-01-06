@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="462.0" style="-fx-background-color: #F1F0ED;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.ReservationController.ReservationsManagementController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="462.0" style="-fx-background-color: #F1F0ED;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.ReservationController.reservation.EditRsePopUpController">
    <top>
       <AnchorPane prefHeight="55.0" prefWidth="463.0" style="-fx-background-color: #630C2F;" BorderPane.alignment="CENTER">
          <children>
@@ -29,7 +29,7 @@
    <center>
       <AnchorPane prefHeight="464.0" prefWidth="310.0" style="-fx-background-color: #F1F0ED;" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="20.0" layoutY="32.0" prefHeight="365.0" prefWidth="228.0">
+            <VBox layoutX="20.0" layoutY="-7.0" prefHeight="434.0" prefWidth="228.0">
                <children>
                   <Label text="Customer Name" textFill="#b19251">
                      <font>
@@ -39,59 +39,68 @@
                         <Insets top="12.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField promptText="Customer Name" />
+                  <TextField fx:id="customerNameField" promptText="Customer Name" />
                   <Label text="Date of booking" textFill="#b19251">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="12.0" />
+                        <Insets top="9.0" />
                      </VBox.margin>
                   </Label>
-                  <DatePicker prefHeight="26.0" prefWidth="247.0" promptText="xx/xx/xxxx" />
+                  <DatePicker fx:id="reservationDateField" prefHeight="26.0" prefWidth="247.0" promptText="xx/xx/xxxx" />
                   <Label text="Time of booking" textFill="#b19251">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="12.0" />
+                        <Insets top="9.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField promptText="xx:xx" />
+                  <TextField fx:id="reservationTimeField" promptText="xx:xx" />
                   <Label text="Table Number" textFill="#b19251">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="12.0" />
+                        <Insets top="9.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField promptText="#" />
+                  <TextField fx:id="reservationTiablleNumField" promptText="#" />
                   <Label text="Number of people " textFill="#b19251">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="12.0" />
+                        <Insets top="9.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField promptText="#" />
+                  <TextField fx:id="reservationPeopleNumField" promptText="#" />
+                  <Label text="Table Preference" textFill="#b19251">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="9.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="TablePreferenceCol" promptText="Table Preference" />
                   <Label text="Status" textFill="#b19251">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
-                     <VBox.margin>
+                     <padding>
                         <Insets top="12.0" />
-                     </VBox.margin>
+                     </padding>
                   </Label>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="25.0" prefWidth="228.0">
                      <children>
-                        <RadioButton mnemonicParsing="false" text="Done" textFill="#b19251">
+                        <RadioButton fx:id="doneRadio" mnemonicParsing="false" text="Done" textFill="#b19251">
                            <HBox.margin>
                               <Insets left="5.0" top="10.0" />
                            </HBox.margin>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Not yet" textFill="#b19251">
+                        <RadioButton fx:id="notYetRadio" mnemonicParsing="false" text="Not yet" textFill="#b19251">
                            <HBox.margin>
                               <Insets left="40.0" top="10.0" />
                            </HBox.margin>
@@ -100,9 +109,9 @@
                   </HBox>
                </children>
             </VBox>
-            <VBox layoutX="67.0" layoutY="407.0" prefHeight="73.0" prefWidth="100.0">
+            <VBox layoutX="65.0" layoutY="415.0" prefHeight="73.0" prefWidth="100.0">
                <children>
-                  <Button disable="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #630C2F;" text="Edit" textFill="#b19251">
+                  <Button fx:id="EditProcessEditbtn" mnemonicParsing="false" onAction="#handleEditProcess" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #630C2F;" text="Edit" textFill="#b19251">
                      <VBox.margin>
                         <Insets bottom="10.0" left="5.0" />
                      </VBox.margin>
@@ -110,7 +119,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="EditProcessCancelbtn" mnemonicParsing="false" onAction="#closePopUp" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #004332;" text="Cancel" textFill="#b19251">
+                  <Button mnemonicParsing="false" onAction="#closePopUp" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #004332;" text="Cancel" textFill="#b19251">
                      <VBox.margin>
                         <Insets left="5.0" />
                      </VBox.margin>

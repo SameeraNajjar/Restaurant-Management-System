@@ -1,66 +1,112 @@
 package org.example.rmsproject.models;
+
 import javax.persistence.*;
-import javax.persistence.Table;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
-@Table(name="Reservation")
-
+@Table(name = "reservation")
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int reserve_Id;
+    @Column(name = "reservation_id")
+    private int reservation_id;
 
-    @Column(name="DateRresevation")
-    private Date DateRresevation;
-//     table_Id , customer_Id
-    @Column(name="TimeReservation")
-    private String TimeReservation;
-    @Column(name="NumberOf_People")
-    private int NumberOf_People;
-    @Column(name="tablePreference")
+    @Column(name = "reservation_status", nullable = false)
+    private String reservationStatus = "PENDING";
+
+    @Column(name = "date_reservation", nullable = false)
+    private Date dateReservation;
+
+    @Column(name = "time_reservation", nullable = false)
+    private Time timeReservation;
+
+    @Column(name = "number_of_people", nullable = false)
+    private int numberOfPeople;
+
+    @Column(name = "table_preference", length = 400)
     private String tablePreference;
-    @Column(name="Reservation_Status")
-    private String  Reservation_Status;
 
-    public Date getDateRresevation() {
-        return DateRresevation;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "table_id", nullable = false, referencedColumnName = "table_id")
+    private ResturantTable restaurantTable;
+
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "customer_id", nullable = false, referencedColumnName = "customer_id")
+    private Customer customer;
+
+
+    public Reservation() {}
+
+    public Reservation(int reservationId, Date dateReservation, Time timeReservation, int numberOfPeople,
+                       String tablePreference, String reservationStatus, int tableId, int customerId) {
+        System.out.println(reservationId);
+        this.reservation_id = reservationId;
+        this.dateReservation = dateReservation;
+        this.timeReservation = timeReservation;
+        this.numberOfPeople = numberOfPeople;
+        this.tablePreference = tablePreference;
+        this.reservationStatus = reservationStatus;
+
+        this.restaurantTable = new ResturantTable();
+        this.restaurantTable.setTableId(tableId);
+
+        this.customer = new Customer();
+        this.customer.setCustomerId(customerId);
     }
 
-    public void setDateRresevation(Date dateRresevation) {
-        DateRresevation = dateRresevation;
+    public Reservation(int reservationId, Date dateReservation, Time timeReservation, int numberOfPeople,
+                       String tablePreference, String reservationStatus) {
+        this.reservation_id = reservationId;
+        this.dateReservation = dateReservation;
+        this.timeReservation = timeReservation;
+        this.numberOfPeople = numberOfPeople;
+        this.tablePreference = tablePreference;
+        this.reservationStatus = reservationStatus;
     }
 
-    public String getTimeReservation() {
-        return TimeReservation;
+    // Getters and Setters
+
+    public int getReservationId() {
+        return reservation_id;
     }
 
-    public void setTimeReservation(String timeReservation) {
-        TimeReservation = timeReservation;
+    public void setReservationId(int reservationId) {
+        this.reservation_id = reservationId;
     }
 
-    public int getReserve_Id() {
-        return reserve_Id;
+    public String getReservationStatus() {
+        return reservationStatus;
     }
 
-    public void setReserve_Id(int reserve_Id) {
-        this.reserve_Id = reserve_Id;
+    public void setReservationStatus(String reservationStatus) {
+        this.reservationStatus = reservationStatus;
     }
 
-    public int getNumberOf_People() {
-        return NumberOf_People;
+    public Date getDateReservation() {
+        return dateReservation;
     }
 
-    public void setNumberOf_People(int numberOf_People) {
-        NumberOf_People = numberOf_People;
+    public void setDateReservation(Date dateReservation) {
+        this.dateReservation = dateReservation;
     }
 
-    public String getReservation_Status() {
-        return Reservation_Status;
+    public Time getTimeReservation() {
+        return timeReservation;
     }
 
-    public void setReservation_Status(String reservation_Status) {
-        Reservation_Status = reservation_Status;
+    public void setTimeReservation(Time timeReservation) {
+        this.timeReservation = timeReservation;
+    }
+
+    public int getNumberOfPeople() {
+        return numberOfPeople;
+    }
+
+    public void setNumberOfPeople(int numberOfPeople) {
+        this.numberOfPeople = numberOfPeople;
     }
 
     public String getTablePreference() {
@@ -69,5 +115,51 @@ public class Reservation {
 
     public void setTablePreference(String tablePreference) {
         this.tablePreference = tablePreference;
+    }
+
+    public ResturantTable getRestaurantTable() {
+        return restaurantTable;
+    }
+
+    public void setRestaurantTable(ResturantTable restaurantTable) {
+        this.restaurantTable = restaurantTable;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    // Optional: Add a toString method for debugging
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "reservationId=" + reservation_id +
+                ", reservationStatus='" + reservationStatus + '\'' +
+                ", dateReservation=" + dateReservation +
+                ", timeReservation=" + timeReservation +
+                ", numberOfPeople=" + numberOfPeople +
+                ", tablePreference='" + tablePreference + '\'' +
+                ", restaurantTable=" + (restaurantTable != null ? restaurantTable.getTableId() : "null") +
+                ", customer=" + (customer != null ? customer.getCustomerName() : "null") +
+                '}';
+    }
+    public String getFormattedDate() {
+        if (dateReservation == null) {
+            return "";
+        }
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return dateFormat.format(dateReservation);
+    }
+    public boolean isDone() {
+        return "DONE".equalsIgnoreCase(reservationStatus);
+    }
+
+    public void setDone(boolean done) {
+        this.reservationStatus = done ? "DONE" : "PENDING";
     }
 }

@@ -1,30 +1,49 @@
 package org.example.rmsproject.models;
 
 import javax.persistence.*;
-import javax.persistence.Table;
-@Entity
-@Table(name="ResturantTable")
+import java.util.List;
 
+@Entity
+@Table(name = "resturant_table")
 public class ResturantTable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name="status")
-    private String status;
+    @Column(name = "table_id")
+    private int table_id;
 
-    public int getId() {
-        return id;
+    @Column(name = "table_status", nullable = false, length = 20)
+    private String tableStatus;
+
+    @OneToMany(mappedBy = "restaurantTable", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Reservation> reservations;
+
+    public ResturantTable() {
+    }
+    public ResturantTable(int tableId) {
+        this.table_id = tableId;
+    }
+    public int getTableId() {
+        return table_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getTableStatus() {
+        return tableStatus;
     }
 
-    public String getStatus() {
-        return status;
+    public void setTableStatus(String tableStatus) {
+        this.tableStatus = tableStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    public void setTableId(int tableId) {
+
     }
 }

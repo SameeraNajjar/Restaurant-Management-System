@@ -1,88 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.ReservationController.ReservationsManagementController">
-   <center>
-      <TableView prefHeight="564.0" prefWidth="1204.0" BorderPane.alignment="CENTER">
-         <columns>
-            <TableColumn prefWidth="202.13330459594727" style="-fx-color: #B89555;" text="Customer ID" />
-            <TableColumn prefWidth="298.3999938964844" style="-fx-color: #B89555;" text="Customer Name" />
-            <TableColumn prefWidth="276.7999572753906" style="-fx-color: #B89555;" text="Phone" />
-            <TableColumn minWidth="0.0" prefWidth="425.60003662109375" style="-fx-color: #B89555;" text="Action">
+<AnchorPane prefHeight="696.0" prefWidth="1164.0" stylesheets="@responsiveStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.ReservationController.customer.CustomerManagementController">
+   <children>
+
+      <!-- Main Content with TableView -->
+      <AnchorPane prefHeight="697.0" prefWidth="1167.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="searchField" layoutX="31.2" layoutY="120.8" prefHeight="26.0" prefWidth="1001.0" promptText="Search by customer Phone" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="132.0" AnchorPane.topAnchor="121.0" />
+            <Button fx:id="searchButton"   layoutX="1046.2" layoutY="114.4" prefHeight="30.0" prefWidth="84.0" style="-fx-background-radius: 15; -fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="33.799999999999955" AnchorPane.topAnchor="114.4">
+               <graphic>
+                  <ImageView  fitHeight="28.0" fitWidth="30.0"  pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+
+            <!-- TableView -->
+            <TableView fx:id="customerTableView" layoutX="27.2" layoutY="252.2" prefHeight="295.0" prefWidth="1102.0" AnchorPane.bottomAnchor="149.4000000000001" AnchorPane.leftAnchor="27.2" AnchorPane.rightAnchor="34.40000000000009" AnchorPane.topAnchor="252.2">
                <columns>
-                  <TableColumn prefWidth="221.06683349609375" text="Delete" />
-                  <TableColumn prefWidth="205.333251953125" text="Edit" />
+                  <TableColumn fx:id="idC" prefWidth="202.13" text="Customer ID" />
+                  <TableColumn fx:id="nameC" prefWidth="298.4" text="Customer Name" />
+                  <TableColumn fx:id="phoneC" prefWidth="276.8" text="Customer Phone" />
+                  <TableColumn fx:id="actionCol" minWidth="0.0" prefWidth="248.0" text="Action" />
                </columns>
-            </TableColumn>
-         </columns>
-         <BorderPane.margin>
-            <Insets left="20.0" right="20.0" />
-         </BorderPane.margin>
-      </TableView>
-   </center>
-   <top>
-      <HBox BorderPane.alignment="CENTER">
-         <children>
-            <AnchorPane prefHeight="172.0" prefWidth="1244.0">
-               <children>
-                  <Pane layoutX="805.0" layoutY="116.0" prefHeight="44.0" prefWidth="406.0">
-                     <children>
-                        <TextField alignment="CENTER" layoutY="2.0" prefHeight="42.0" prefWidth="413.0" promptText="Search" style="-fx-background-radius: 50; -fx-border-color: #630C2F; -fx-border-radius: 50; -fx-border-width: 2;" />
-                        <Pane layoutX="348.0" layoutY="4.0" prefHeight="38.0" prefWidth="62.0" style="-fx-background-radius: 40; -fx-border-radius: 40; -fx-background-color: #F1F0ED;">
-                           <children>
-                              <ImageView fitHeight="34.0" fitWidth="54.0" layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../images/search.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </Pane>
-                     </children>
-                  </Pane>
-                  <Text fill="#b19251" layoutX="21.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers  Management ">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Text>
-                  <HBox layoutX="68.0" layoutY="100.0" />
-                  <Button layoutX="79.0" layoutY="116.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="174.0" style="-fx-background-color: #B89555;" text="Add Customer" textFill="#630c2f">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../images/AddCustImg.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </AnchorPane>
-         </children>
-      </HBox>
-   </top>
-   <bottom>
-      <AnchorPane prefHeight="269.0" prefWidth="1244.0" BorderPane.alignment="CENTER">
-         <children>
-            <Pagination layoutX="841.0" layoutY="9.0" prefHeight="72.0" prefWidth="334.0" style="-fx-background-color: #630C2F;" />
-            <Button layoutX="159.0" layoutY="3.0" mnemonicParsing="false" onAction="#openEditCust" prefHeight="26.0" prefWidth="90.0" text="testEdit" />
-            <Button layoutX="255.0" layoutY="3.0" mnemonicParsing="false" onAction="#openDeleteCust" prefHeight="26.0" prefWidth="90.0" text="testDelete" />
+            </TableView>
+
+            <HBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Text fill="#b19251" layoutX="34.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-text" text="Customers Management">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="customerNameF" layoutX="30.4" layoutY="160.2" prefHeight="26.0" prefWidth="765.0" promptText="Add Customer Name" AnchorPane.leftAnchor="30.4" AnchorPane.rightAnchor="368.80000000000007" AnchorPane.topAnchor="160.2" />
+            <Button fx:id="insertbn"   layoutX="829.4" layoutY="171.2" prefHeight="38.0" prefWidth="181.0" style="-fx-background-radius: 15; -fx-background-color: #630C2F;" text="Add Customer" textFill="#b19251" AnchorPane.rightAnchor="153.0" AnchorPane.topAnchor="171.2">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/Pluscircle.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="customerPhoneF" layoutX="30.4" layoutY="204.2" prefHeight="26.0" prefWidth="762.0" promptText="Add Customer Phone" AnchorPane.leftAnchor="30.4" AnchorPane.rightAnchor="372.0000000000001" AnchorPane.topAnchor="204.2" />
          </children>
       </AnchorPane>
-   </bottom>
-</BorderPane>
+   </children>
+</AnchorPane>
