@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="462.0" style="-fx-background-color: #F1F0ED;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.ReservationController.ReservationsManagementController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="462.0" style="-fx-background-color: #F1F0ED;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.ReservationController.customer.EditCustPopUpController">
     <top>
         <AnchorPane prefHeight="55.0" prefWidth="463.0" style="-fx-background-color: #630C2F;" BorderPane.alignment="CENTER">
             <children>
@@ -36,7 +36,7 @@
                                 <Insets top="40.0" />
                             </VBox.margin>
                         </Label>
-                        <TextField promptText="Customer Name" />
+                        <TextField fx:id="customerNameField" promptText="Customer Name" />
                         <Label text="Phone" textFill="#b19251">
                             <font>
                                 <Font name="System Bold" size="14.0" />
@@ -45,30 +45,30 @@
                                 <Insets top="40.0" />
                             </VBox.margin>
                         </Label>
-                        <TextField promptText="xxxxxxxx" />
-                      <VBox prefHeight="74.0" prefWidth="130.0">
-                          <children>
-                              <Button disable="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #630C2F;" text="Edit" textFill="#b19251">
-                                  <VBox.margin>
-                                      <Insets bottom="10.0" left="5.0" />
-                                  </VBox.margin>
-                                  <font>
-                                      <Font name="System Bold" size="12.0" />
-                                  </font>
-                              </Button>
-                              <Button fx:id="EditProcessCancelbtn" mnemonicParsing="false" onAction="#closePopUp" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #004332;" text="Cancel" textFill="#b19251">
-                                  <VBox.margin>
-                                      <Insets left="5.0" />
-                                  </VBox.margin>
-                                  <font>
-                                      <Font name="System Bold" size="12.0" />
-                                  </font>
-                              </Button>
-                          </children>
-                     <VBox.margin>
-                        <Insets left="60.0" top="60.0" />
-                     </VBox.margin>
-                      </VBox>
+                        <TextField fx:id="customerPhoneField" promptText="xxxxxxxx" />
+                        <VBox prefHeight="74.0" prefWidth="130.0">
+                            <children>
+                                <Button onAction="#handleSaveCustomer" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #630C2F;" text="Edit" textFill="#b19251">
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="5.0" />
+                                    </VBox.margin>
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="EditProcessCancelbtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #004332;" text="Cancel" textFill="#b19251" onAction="#closePopUp">
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="60.0" top="60.0" />
+                            </VBox.margin>
+                        </VBox>
                     </children>
                 </VBox>
             </children>
