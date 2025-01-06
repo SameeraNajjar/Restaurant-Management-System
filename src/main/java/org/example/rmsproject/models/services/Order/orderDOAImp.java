@@ -1,4 +1,45 @@
 package org.example.rmsproject.models.services.Order;
 
-public class orderDOAImp {
+
+
+import org.example.rmsproject.models.Order;
+import org.example.rmsproject.models.OrderItem;
+
+import org.example.rmsproject.models.interfaces.Order.orderDOA;
+import org.example.rmsproject.util.HibernateUtil;
+import org.hibernate.Session;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class orderDOAImp implements orderDOA {
+
+
+
+    @Override
+    public List<Order> getAll(Order order) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            List<Order> orders = session.createQuery("FROM Order o LEFT JOIN FETCH o.items", Order.class).list();
+
+            for (Order o : orders) {
+                System.out.println("Order ID: " + o.getOrderId());
+                if (o.getItems() != null && !o.getItems().isEmpty()) {
+                    for (OrderItem item : o.getItems()) {
+                        System.out.println("  Item: " + item.getItemName());
+                    }
+                } else {
+                    System.out.println("  No items found for this order.");
+                }
+            }
+
+            return orders;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
+
+
+
 }
+

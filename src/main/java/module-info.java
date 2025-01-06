@@ -22,14 +22,18 @@ module org.example.rmsproject {
     opens org.example.rmsproject.Controllers.ReservationController to javafx.fxml;
     opens org.example.rmsproject.Controllers.RegisterationControllers to javafx.fxml;
     opens org.example.rmsproject.Controllers.UserManagement to javafx.fxml;
-    opens org.example.rmsproject.Controllers.OrderController to javafx.fxml;
+    opens org.example.rmsproject.Controllers.OrderControllers to javafx.fxml;
     opens org.example.rmsproject.Controllers.MenuControllers to javafx.fxml;
-
+    opens org.example.rmsproject.Controllers.ReservationController.customer to javafx.fxml;
+    opens org.example.rmsproject.Controllers.ReservationController.reservation to javafx.fxml;
     // Exporting packages
     exports org.example.rmsproject;
+    exports org.example.rmsproject.Controllers.ReservationController.reservation;
+    exports org.example.rmsproject.Controllers.ReservationController.customer;
     exports org.example.rmsproject.Controllers.ReservationController;
     exports org.example.rmsproject.Controllers.RegisterationControllers;
     exports org.example.rmsproject.Controllers.UserManagement;
-    exports org.example.rmsproject.Controllers.OrderController;
+    exports org.example.rmsproject.Controllers.OrderControllers;
     exports org.example.rmsproject.Controllers.MenuControllers;
+
 }
