@@ -20,15 +20,15 @@ public class HibernateUtil {
 
     private static HibernateUtil instance = null;
 
-    private static SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+    private static SessionFactory sessionFactory;
     private static StandardServiceRegistry serviceRegistry;
 
     private HibernateUtil(){
         Configuration configuration = new Configuration();
-       configuration.addAnnotatedClass(Users.class);
-        configuration.addAnnotatedClass(Category.class);
+        configuration.addAnnotatedClass(Users.class);
         configuration.addAnnotatedClass(Menu.class);
         configuration.addAnnotatedClass(MenuItem.class);
+        configuration.addAnnotatedClass(Category.class);
         configuration.addAnnotatedClass(Customer.class);
         configuration.addAnnotatedClass(Order.class);
         configuration.addAnnotatedClass(OrderItem.class);
