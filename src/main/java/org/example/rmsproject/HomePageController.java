@@ -1,5 +1,4 @@
 package org.example.rmsproject;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -10,11 +9,10 @@ import org.example.rmsproject.models.Users;
 import org.example.rmsproject.util.SessionManager;
 
 import java.util.Objects;
-
 public class HomePageController extends AbsController {
-
     @FXML
     private Button homeButton;
+
 
     @FXML
     private Button menuButton;

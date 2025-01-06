@@ -113,5 +113,4 @@ public class LoginController {
 
         return user != null;
     }
-
 }
