@@ -75,7 +75,7 @@ public class HomePageController {
     public void handleOrdersButton(ActionEvent actionEvent) {
         try {
             // Correct path to the FXML file for orders
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/OrderView/AddOrder.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Order_Management/AddOrder.fxml"));
             Parent root = loader.load();
 
             // Get the current stage and set the new scene

@@ -3,32 +3,35 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "orderId") // Ensure this matches your DB column name
     private int orderId;
 
-    @Column(name ="customerName", nullable = true)
+    @Column(name = "customerName", nullable = true)
     private String customerName;
 
-    @Column(name ="specialInstructions", nullable = false)
+    @Column(name = "specialInstructions", columnDefinition = "TEXT")
     private String specialInstructions;
 
-    @Column(name ="status", nullable = false)
+
+    @Column(name = "status", nullable = false)
     private String status;
 
-    @Column(name ="totalPrice", nullable = false)
+    @Column(name = "totalPrice", nullable = false)
     private double totalPrice;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(
             name = "order_order_items",
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "order_item_id")
     )
     private List<OrderItem> items;
+
 
 
 

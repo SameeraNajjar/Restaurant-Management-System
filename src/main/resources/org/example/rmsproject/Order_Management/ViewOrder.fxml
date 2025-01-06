@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.rmsproject.Controllers.OrderControllers.ViewOrderController"
+            style="-fx-background-color: #004332;">
+
+    <children>
+        <Text text="View Order" layoutX="20.0" layoutY="50.0" fill="#b89555">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Text>
+
+        <VBox alignment="CENTER" spacing="20" prefWidth="800.0" prefHeight="400.0"
+              AnchorPane.topAnchor="100" AnchorPane.bottomAnchor="100"
+              AnchorPane.leftAnchor="112" AnchorPane.rightAnchor="112">
+            <TableView fx:id="ordersTable" prefHeight="320.0" prefWidth="800.0"
+                       style="-fx-background-color: white; -fx-border-color: #b89555; -fx-border-width: 2;">
+                <columns>
+                    <TableColumn fx:id="orderIdColumn" text="Order ID" prefWidth="150.0"
+                                 style="-fx-alignment: CENTER; -fx-font-weight: bold; -fx-text-fill: #b89555;" />
+                    <TableColumn fx:id="itemsColumn" text="Item(s)" prefWidth="300.0"
+                                 style="-fx-alignment: CENTER; -fx-font-weight: bold; -fx-text-fill: #b89555;" />
+                    <TableColumn fx:id="totalPriceColumn" text="Total Price" prefWidth="150.0"
+                                 style="-fx-alignment: CENTER; -fx-font-weight: bold; -fx-text-fill: #b89555;" />
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="200.0"
+                                 style="-fx-alignment: CENTER; -fx-font-weight: bold; -fx-text-fill: #b89555;" />
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox fx:id="buttonContainer" spacing="10.0" visible="false" layoutX="112" layoutY="200.0"
+              style="-fx-background-color: transparent;">
+            <Button fx:id="viewDetailsButton" text="View Details"
+                    style="-fx-background-color: #b89555; -fx-text-fill: white;"
+                    onAction="#handleViewDetailsButtonAction" />
+
+
+            <Button fx:id="actionButton" text="Other Action" style="-fx-background-color: #b89555; -fx-text-fill: white;" />
+        </VBox>
+    </children>
+</AnchorPane>
