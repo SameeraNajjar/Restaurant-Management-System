@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL" uuid="b58712a8-c59d-4492-a3ac-4069c9b7d74c">
+    <data-source source="LOCAL" name="MySQL" uuid="4326cba0-2211-4c0f-be4a-5ffd7b88fd42">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>Hibernate
-
-C:/Users/USER-Q/Desktop/Project/Restaurant-Management-System/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/rms</jdbc-url>
       <jdbc-additional-properties>
