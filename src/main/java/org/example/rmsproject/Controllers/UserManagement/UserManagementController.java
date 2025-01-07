@@ -35,7 +35,8 @@ public class UserManagementController extends AbsController implements Initializ
     private TableColumn<Users, String> rateColumn;
     @FXML
     private TableColumn<Users, String> phoneColumn;
-
+    @FXML
+    private TextField searchField;
     private UserDAO userDAO;
     @FXML
     private TableColumn<Users, Void> updateColumn;
@@ -203,5 +204,15 @@ public class UserManagementController extends AbsController implements Initializ
             e.printStackTrace();
         }
     }
-
+    @FXML
+    private void handleSearch() {
+        String keyword = searchField.getText().trim();
+        if (!keyword.isEmpty()) {
+            List<Users> searchResults = userDAO.searchUsersByNameOrEmail(keyword);
+            ObservableList<Users> usersObservableList = FXCollections.observableArrayList(searchResults);
+            usersTable.setItems(usersObservableList);
+        } else {
+            loadUsers();
+        }
+    }
 }

@@ -26,7 +26,7 @@ public class HibernateUtil {
     private HibernateUtil(){
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(Users.class);
-        configuration.addAnnotatedClass(Menu.class);
+         configuration.addAnnotatedClass(Menu.class);
         configuration.addAnnotatedClass(MenuItem.class);
         configuration.addAnnotatedClass(Category.class);
         configuration.addAnnotatedClass(Customer.class);

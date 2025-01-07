@@ -1,6 +1,10 @@
 package org.example.rmsproject.Controllers.RegisterationControllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import javafx.scene.control.PasswordField;
@@ -63,5 +67,19 @@ public class resetPassword {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    @FXML
+    void goToHomePage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/HomePage.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) newPasswordField.getScene().getWindow(); // Get current stage
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Error", "Failed to load the Home Page.");
+        }
+    }
+
 
 }
