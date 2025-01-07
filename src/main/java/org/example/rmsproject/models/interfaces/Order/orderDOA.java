@@ -10,7 +10,7 @@ public interface orderDOA {
 
 
     public List<Order> getAll(Order order);
-
+    public void addOrder(Order order);
 
 
 }

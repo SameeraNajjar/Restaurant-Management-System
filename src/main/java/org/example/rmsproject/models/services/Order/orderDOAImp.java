@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class orderDOAImp implements orderDOA {
 
 
-
     @Override
     public List<Order> getAll(Order order) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -40,7 +39,26 @@ public class orderDOAImp implements orderDOA {
         }
     }
 
+    @Override
+    public void addOrder(Order order) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
 
+            session.save(order);
+
+            if (order.getItems() != null) {
+                for (OrderItem item : order.getItems()) {
+                    session.save(item);
+                }
+            }
+
+            session.getTransaction().commit();
+            System.out.println("Order added successfully with ID: " + order.getOrderId());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Failed to add the order.");
+        }
+    }
 
 }
 
