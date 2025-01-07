@@ -3,24 +3,117 @@ package org.example.rmsproject.models.services.Table.DAOReservation;
 import org.example.rmsproject.models.Customer;
 import org.example.rmsproject.models.Reservation;
 import org.example.rmsproject.models.ResturantTable;
+import org.example.rmsproject.models.interfaces.Table.customerDOA;
 import org.example.rmsproject.models.interfaces.Table.reservationDOA;
+import org.example.rmsproject.models.services.Table.DAOCustomer.customerDOAImp;
 import org.example.rmsproject.util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import javax.persistence.EntityNotFoundException;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class reservationDOAmp implements reservationDOA {
 
     HibernateUtil hibUtil;
     SessionFactory sessionFactory;
+    private final customerDOA customerService = new customerDOAImp();
     public reservationDOAmp() {
         hibUtil=HibernateUtil.getInstance();
         sessionFactory=hibUtil.getSessionFactory();
     }
+    @Override
+    public List<Customer> getAllCustomers() {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.createQuery("FROM Customer", Customer.class).list();
+        } catch (Exception e) {
+            return new ArrayList<>();
+        }
+    }
+    @Override
+    public void addCustomer(String name, String phone) {
+        try (Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+            Customer newCustomer = new Customer();
+            newCustomer.setCustomerName(name);
+            newCustomer.setCustomerPhone(phone);
+            session.save(newCustomer);
+            session.getTransaction().commit();
+            System.out.println("Customer ID: " + newCustomer.getCustomerId());
 
+        } catch (Exception e) {
+            System.out.println("Error while adding customer");
+        }
+    }
+    @Override
+    public Customer getCustomerByPhone(String phone) {
+        try (Session session = sessionFactory.openSession()) {
+            String hql = "FROM Customer c WHERE c.customerPhone = :phone";
+            org.hibernate.query.Query<Customer> query = session.createQuery(hql, Customer.class);
+            query.setParameter("phone", phone);
+            return query.uniqueResult();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    @Override
+    public ResturantTable getTableById(int tableId) {
+        try (Session session = sessionFactory.openSession()) {
+            ResturantTable table = session.get(ResturantTable.class, tableId);
+            if (table == null) {
+                throw new EntityNotFoundException("Table with ID " + tableId + " not found.");
+            }
+            return table;
+        } catch (Exception e) {
+            System.err.println("Error while fetching table with ID " + tableId);
+            throw new RuntimeException("Unable to fetch table with ID " + tableId, e);
+        }
+    }
+    @Override
+    public List<Integer> findAvailableTableByDataAndTime(Date date, Time time) {
+        try (Session session = sessionFactory.openSession()) {
+            System.out.println("Executing query for date: " + date + ", time: " + time);
+
+            return session.createQuery(
+                            "SELECT t.table_id " +
+                                    "FROM ResturantTable t " +
+                                    "WHERE t.tableStatus = 'available' " +
+                                    "AND NOT EXISTS (" +
+                                    "    SELECT 1 FROM Reservation r " +
+                                    "    WHERE r.restaurantTable.table_id = t.table_id " +
+                                    "    AND r.dateReservation = :date " +
+                                    "    AND r.timeReservation = :time " +
+                                    ") ", Integer.class)
+                    .setParameter("date", date)
+                    .setParameter("time", time)
+                    .list();
+        } catch (Exception e) {
+            return new ArrayList<>();
+        }
+    }
+    @Override
+    public void addReservation(Reservation reservation) {
+        try (Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+            Customer existingCustomer = session.createQuery("FROM Customer WHERE customerPhone = :phone", Customer.class)
+                    .setParameter("phone", reservation.getCustomer().getCustomerPhone())
+                    .uniqueResult();
+
+            if (existingCustomer == null) {
+                session.save(reservation.getCustomer());
+            } else {
+                reservation.setCustomer(existingCustomer);
+            }
+            session.save(reservation);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println("Error while adding reservation");
+        }
+    }
     @Override
     public void save(Reservation reservation) {
         Session session = sessionFactory.openSession();

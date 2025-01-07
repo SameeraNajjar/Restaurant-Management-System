@@ -18,6 +18,42 @@ public class customerDOAImp implements customerDOA {
         sessionFactory = hibernateUtil.getSessionFactory();
     }
     @Override
+    public void saveCustomer(Customer customer) {
+        try (Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.save(customer);
+            transaction.commit();
+        } catch (Exception e) {
+            System.out.println("Error while saving customer");
+        }
+
+    }
+
+        @Override
+        public Customer findCustomerByPhone(String phone) {
+            try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+                return session.createQuery("FROM Customer WHERE customerPhone = :phone", Customer.class)
+                        .setParameter("phone", phone)
+                        .uniqueResult();
+            } catch (Exception e) {
+                return null;
+            }
+        }
+
+        public boolean isCustomerExists(String phoneNumber) {
+            try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+                List<Customer> customers = session.createQuery("FROM Customer", Customer.class).list();
+                Customer existingCustomer = customers.stream()
+                        .filter(customer -> customer.getCustomerPhone().equals(phoneNumber))
+                        .findFirst()
+                        .orElse(null);
+                return existingCustomer != null;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+
+    @Override
     public void save(Customer customer) {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();

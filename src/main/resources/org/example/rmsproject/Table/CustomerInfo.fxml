@@ -15,10 +15,10 @@
    <children>
 
       <!-- Main Content with TableView -->
-      <AnchorPane prefHeight="697.0" prefWidth="1167.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="1.0" prefHeight="697.0" prefWidth="1167.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" AnchorPane.bottomAnchor="-0.6666666666666288" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-3.6666666666667425" AnchorPane.topAnchor="0.0">
          <children>
             <TextField fx:id="searchField" layoutX="31.2" layoutY="120.8" prefHeight="26.0" prefWidth="765.0" promptText="Search by customer Phone" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="371.0" AnchorPane.topAnchor="121.0" />
-            <Button fx:id="searchButton" layoutX="798.0" layoutY="116.0" prefHeight="30.0" prefWidth="84.0" style="-fx-background-radius: 15; -fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="285.20000000000005" AnchorPane.topAnchor="116.0">
+            <Button fx:id="searchButton" layoutX="798.0" layoutY="116.0" onMouseClicked="#handleSearch" prefHeight="30.0" prefWidth="84.0" style="-fx-background-radius: 15; -fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="285.20000000000005" AnchorPane.topAnchor="116.0">
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -44,8 +44,8 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="customerNameF" layoutX="30.4" layoutY="160.0" prefHeight="26.0" prefWidth="327.0" promptText="Add Customer Name" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="810.0" AnchorPane.topAnchor="160.0" />
-            <Button fx:id="insertbn" layoutX="398.0" layoutY="173.0" prefHeight="38.0" prefWidth="158.0" style="-fx-background-radius: 15; -fx-background-color: #630C2F;" text="Add Customer" textFill="#b19251" AnchorPane.rightAnchor="612.0" AnchorPane.topAnchor="173.0">
+            <TextField fx:id="customerNameF" layoutX="32.0" layoutY="159.33333333333334" prefHeight="26.0" prefWidth="650.0" promptText="Add Customer Name" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="489.0" AnchorPane.topAnchor="159.0" />
+            <Button fx:id="insertbn" layoutX="728.0" layoutY="177.66666666666666" onAction="#handleAddCustomer" prefHeight="38.0" prefWidth="158.0" style="-fx-background-radius: 15; -fx-background-color: #630C2F;" text="Add Customer" textFill="#b19251" AnchorPane.rightAnchor="280.66666666666674" AnchorPane.topAnchor="177.66666666666666">
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -57,7 +57,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="customerPhoneF" layoutX="30.4" layoutY="204.0" prefHeight="26.0" prefWidth="326.0" promptText="Add Customer Phone" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="811.0" AnchorPane.topAnchor="204.0" />
+            <TextField fx:id="customerPhoneF" layoutX="30.4" layoutY="204.0" prefHeight="26.0" prefWidth="650.0" promptText="Add Customer Phone" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="488.0" AnchorPane.topAnchor="204.0" />
          </children>
       </AnchorPane>
    </children>
