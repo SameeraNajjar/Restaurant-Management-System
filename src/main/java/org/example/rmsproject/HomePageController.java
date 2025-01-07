@@ -66,7 +66,7 @@ public class HomePageController extends AbsController {
 
     @FXML
     public void handleOrdersButton(ActionEvent actionEvent) {
-        loadScene(actionEvent, "/org/example/rmsproject/OrderView/AddOrder.fxml", null);
+        loadScene(actionEvent, "/org/example/rmsproject/Order_Management/ViewOrder.fxml", null);
     }
 
     @FXML

@@ -156,7 +156,7 @@ public class ViewOrderController {
 
                     private void openOrderDetails(Order order) {
                         try {
-                            FXMLLoader loader = new FXMLLoader(getClass().getResource("OrderDetails.fxml"));
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Order_Management/OrderDetails.fxml"));
                             Parent orderDetailsRoot = loader.load();
 
                             OrderDetailsController controller = loader.getController();

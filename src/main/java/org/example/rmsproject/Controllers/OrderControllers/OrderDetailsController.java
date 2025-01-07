@@ -62,7 +62,7 @@ public class OrderDetailsController {
 
     private void navigateBack() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewOrder.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Order_Management/ViewOrder.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             Stage stage = (Stage) backButton.getScene().getWindow();
