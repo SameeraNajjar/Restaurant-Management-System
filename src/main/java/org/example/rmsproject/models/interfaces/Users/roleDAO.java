@@ -1,6 +1,6 @@
 package org.example.rmsproject.models.interfaces.Users;
 
-import org.example.rmsproject.models.Role;
+import org.example.rmsproject.models.entity.Role;
 
 import java.util.List;
 

@@ -2,11 +2,11 @@ package org.example.rmsproject.models.interfaces.Order;
 
 
 
-import org.example.rmsproject.models.Order;
+import org.example.rmsproject.models.entity.Order;
 
 import java.util.List;
 
-public interface orderDOA {
+public interface orderDAO {
 
 
     public List<Order> getAll(Order order);

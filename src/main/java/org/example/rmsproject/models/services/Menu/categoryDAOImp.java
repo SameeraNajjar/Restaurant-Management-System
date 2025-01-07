@@ -1,14 +1,14 @@
 package org.example.rmsproject.models.services.Menu;
 
-import org.example.rmsproject.models.Category;
-import org.example.rmsproject.models.interfaces.Menu.categoryDOA;
+import org.example.rmsproject.models.entity.Category;
+import org.example.rmsproject.models.interfaces.Menu.categoryDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.example.rmsproject.util.HibernateUtil;
 
 import java.util.List;
 
-public class categoryDOAImp implements categoryDOA {
+public class categoryDAOImp implements categoryDAO {
 
     @Override
     public void save(Category category) {

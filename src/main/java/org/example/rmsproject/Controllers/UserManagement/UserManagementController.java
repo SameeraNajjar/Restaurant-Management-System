@@ -11,7 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.example.rmsproject.Controllers.AbsController;
-import org.example.rmsproject.models.Users;
+import org.example.rmsproject.models.entity.Users;
 import org.example.rmsproject.models.services.User.userDAOImp;
 import org.example.rmsproject.models.interfaces.Users.UserDAO;
 import javafx.event.ActionEvent;

@@ -1,4 +1,4 @@
-package org.example.rmsproject.models;
+package org.example.rmsproject.models.entity;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

@@ -1,11 +1,10 @@
-package org.example.rmsproject;
+package org.example.rmsproject.Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Region;
-import org.example.rmsproject.Controllers.AbsController;
-import org.example.rmsproject.models.Users;
+import org.example.rmsproject.models.entity.Users;
 import org.example.rmsproject.util.SessionManager;
 
 import java.util.Objects;

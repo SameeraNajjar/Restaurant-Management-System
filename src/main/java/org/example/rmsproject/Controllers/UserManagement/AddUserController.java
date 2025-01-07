@@ -9,7 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import org.example.rmsproject.models.Users;
+import org.example.rmsproject.models.entity.Users;
 import org.example.rmsproject.models.interfaces.Users.UserDAO;
 import org.example.rmsproject.models.services.User.userDAOImp;
 

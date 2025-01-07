@@ -11,11 +11,11 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
 import javafx.stage.StageStyle;
-import org.example.rmsproject.models.Customer;
-import org.example.rmsproject.models.Reservation;
-import org.example.rmsproject.models.ResturantTable;
-import org.example.rmsproject.models.interfaces.Table.reservationDOA;
-import org.example.rmsproject.models.services.Table.DAOReservation.reservationDOAmp;
+import org.example.rmsproject.models.entity.Customer;
+import org.example.rmsproject.models.entity.Reservation;
+import org.example.rmsproject.models.entity.ResturantTable;
+import org.example.rmsproject.models.interfaces.Table.reservationDAO;
+import org.example.rmsproject.models.services.Table.DAOReservation.reservationDAOmp;
 import javafx.scene.paint.Color;
 
 import java.sql.Time;
@@ -53,7 +53,7 @@ public class AddReservationController {
     private Date selectedDate;
     private Time selectedTime;
     private String tablePreference;
-    private final reservationDOA reservationService = new reservationDOAmp();
+    private final reservationDAO reservationService = new reservationDAOmp();
 
     //Set initial values for UI elements such as spinners, combobox, etc.
     @FXML

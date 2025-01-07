@@ -7,8 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.example.rmsproject.models.Customer;
-import org.example.rmsproject.models.interfaces.Table.customerDOA;
+import org.example.rmsproject.models.entity.Customer;
 import org.example.rmsproject.models.services.Table.DAOfactoryCustomer.DAOFactoryCustomer;
 
 public class EditCustPopUpController {
@@ -20,7 +19,7 @@ public class EditCustPopUpController {
     private TextField customerPhoneField;
 
     private Customer customer;
-    private customerDOA customerDAO = DAOFactoryCustomer.getCustomerDAO();
+    private org.example.rmsproject.models.interfaces.Table.customerDAO customerDAO = DAOFactoryCustomer.getCustomerDAO();
 
     private CustomerManagementController customerManagementController;
 

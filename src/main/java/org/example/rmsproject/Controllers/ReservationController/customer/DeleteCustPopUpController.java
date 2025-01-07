@@ -4,8 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import org.example.rmsproject.models.Customer;
-import org.example.rmsproject.models.interfaces.Table.customerDOA;
+import org.example.rmsproject.models.entity.Customer;
+import org.example.rmsproject.models.interfaces.Table.customerDAO;
 import org.example.rmsproject.models.services.Table.DAOfactoryCustomer.DAOFactoryCustomer;
 
 public class DeleteCustPopUpController {
@@ -32,7 +32,7 @@ private Customer customer;
     @FXML
     private void confirmDelete(ActionEvent event) {
 
-        customerDOA  customerDAO = DAOFactoryCustomer.getCustomerDAO();
+        customerDAO customerDAO = DAOFactoryCustomer.getCustomerDAO();
         customerDAO.delete(customer);
 
 

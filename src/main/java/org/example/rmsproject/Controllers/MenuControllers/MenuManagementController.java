@@ -19,10 +19,10 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
-import org.example.rmsproject.models.Category;
-import org.example.rmsproject.models.MenuItem;
-import org.example.rmsproject.models.services.Menu.categoryDOAImp;
-import org.example.rmsproject.models.services.Menu.menuItemDOAImp;
+import org.example.rmsproject.models.entity.Category;
+import org.example.rmsproject.models.entity.MenuItem;
+import org.example.rmsproject.models.services.Menu.categoryDAOImp;
+import org.example.rmsproject.models.services.Menu.menuItemDAOImp;
 
 import java.io.IOException;
 
@@ -47,8 +47,8 @@ public class MenuManagementController {
     @FXML
     private TableColumn<Category, Void> categoryActionsColumn;
 
-    private categoryDOAImp categoryDOA = new categoryDOAImp();
-    private menuItemDOAImp menuItemDOA = new menuItemDOAImp();
+    private categoryDAOImp categoryDOA = new categoryDAOImp();
+    private menuItemDAOImp menuItemDOA = new menuItemDAOImp();
 
     @FXML
     public void initialize() {

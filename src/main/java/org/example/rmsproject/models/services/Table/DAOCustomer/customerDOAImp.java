@@ -1,7 +1,7 @@
 package org.example.rmsproject.models.services.Table.DAOCustomer;
 
-import org.example.rmsproject.models.Customer;
-import org.example.rmsproject.models.interfaces.Table.customerDOA;
+import org.example.rmsproject.models.entity.Customer;
+import org.example.rmsproject.models.interfaces.Table.customerDAO;
 import org.example.rmsproject.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class customerDOAImp implements customerDOA {
+public class customerDOAImp implements customerDAO {
     HibernateUtil hibernateUtil;
     SessionFactory sessionFactory;
     public customerDOAImp() {

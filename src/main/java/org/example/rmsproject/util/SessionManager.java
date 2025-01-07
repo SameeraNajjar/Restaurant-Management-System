@@ -1,6 +1,6 @@
 package org.example.rmsproject.util;
 
-import org.example.rmsproject.models.Users;
+import org.example.rmsproject.models.entity.Users;
 
 public class SessionManager {
     private static Users loggedInUser;

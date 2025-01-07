@@ -1,4 +1,4 @@
 package org.example.rmsproject.models.services.Menu;
 
-public class menuDOAImp {
+public class menuDAOImp {
 }

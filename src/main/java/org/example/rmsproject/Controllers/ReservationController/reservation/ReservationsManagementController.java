@@ -16,8 +16,8 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
-import org.example.rmsproject.models.Reservation;
-import org.example.rmsproject.models.interfaces.Table.reservationDOA;
+import org.example.rmsproject.models.entity.Reservation;
+import org.example.rmsproject.models.interfaces.Table.reservationDAO;
 import org.example.rmsproject.models.services.Table.DAOfactoryReservation.DAOFactoryReservation;
 
 import java.io.IOException;
@@ -99,7 +99,7 @@ public class ReservationsManagementController {
 
     public void loadData() {
         try {
-            reservationDOA reservationDOA = DAOFactoryReservation.getCustomerDAO();
+            reservationDAO reservationDOA = DAOFactoryReservation.getCustomerDAO();
             List<Reservation> listOfReservation = reservationDOA.getAll();
             if (listOfReservation != null) {
                 originalReservations = FXCollections.observableArrayList(

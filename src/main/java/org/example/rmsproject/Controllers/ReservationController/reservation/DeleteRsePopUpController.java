@@ -4,8 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import org.example.rmsproject.models.Reservation;
-import org.example.rmsproject.models.interfaces.Table.reservationDOA;
+import org.example.rmsproject.models.entity.Reservation;
+import org.example.rmsproject.models.interfaces.Table.reservationDAO;
 import org.example.rmsproject.models.services.Table.DAOfactoryReservation.DAOFactoryReservation;
 
 public class DeleteRsePopUpController {
@@ -22,7 +22,7 @@ public class DeleteRsePopUpController {
     @FXML
     private void confirmDelete(ActionEvent event) {
 
-        reservationDOA reservationDao= DAOFactoryReservation.getCustomerDAO();
+        reservationDAO reservationDao= DAOFactoryReservation.getCustomerDAO();
 
         reservationDao.delete(reservation);
 

@@ -4,8 +4,8 @@
 //import javafx.fxml.FXML;
 //import javafx.scene.control.*;
 //import javafx.stage.Stage;
-//import org.example.rmsproject.models.Reservation;
-//import org.example.rmsproject.models.ResturantTable;
+//import org.example.rmsproject.models.entity.Reservation;
+//import org.example.rmsproject.models.entity.ResturantTable;
 //import org.example.rmsproject.models.services.Table.DAOfactoryReservation.DAOFactoryReservation;
 //import org.example.rmsproject.models.interfaces.Table.reservationDAO;
 //
@@ -310,9 +310,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import org.example.rmsproject.models.Reservation;
-import org.example.rmsproject.models.ResturantTable;
-import org.example.rmsproject.models.interfaces.Table.reservationDOA;
+import org.example.rmsproject.models.entity.Reservation;
+import org.example.rmsproject.models.entity.ResturantTable;
+import org.example.rmsproject.models.interfaces.Table.reservationDAO;
 import org.example.rmsproject.models.services.Table.DAOfactoryReservation.DAOFactoryReservation;
 import org.example.rmsproject.util.HibernateUtil;
 import org.hibernate.Session;
@@ -455,7 +455,7 @@ public class EditRsePopUpController {
             java.sql.Date sqlDate = java.sql.Date.valueOf(updatedReservationDate);
 
 
-            reservationDOA reservationDao = DAOFactoryReservation.getCustomerDAO();
+            reservationDAO reservationDao = DAOFactoryReservation.getCustomerDAO();
             List<ResturantTable> availableTables = reservationDao.getAvailableTables(sqlDate, updatedTime);
 
 

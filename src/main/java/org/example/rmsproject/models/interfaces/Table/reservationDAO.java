@@ -1,14 +1,14 @@
 package org.example.rmsproject.models.interfaces.Table;
 
-import org.example.rmsproject.models.Customer;
-import org.example.rmsproject.models.Reservation;
-import org.example.rmsproject.models.ResturantTable;
+import org.example.rmsproject.models.entity.Customer;
+import org.example.rmsproject.models.entity.Reservation;
+import org.example.rmsproject.models.entity.ResturantTable;
 
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
-public interface reservationDOA {
+public interface reservationDAO {
     public void save(Reservation reservation);
     public List<Reservation> getAll();
     public void delete(Reservation reservation);

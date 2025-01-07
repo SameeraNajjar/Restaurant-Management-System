@@ -1,8 +1,8 @@
 package org.example.rmsproject.models.services.Menu;
 
-import org.example.rmsproject.models.Category;
-import org.example.rmsproject.models.MenuItem;
-import org.example.rmsproject.models.interfaces.Menu.menuItemDOA;
+import org.example.rmsproject.models.entity.Category;
+import org.example.rmsproject.models.entity.MenuItem;
+import org.example.rmsproject.models.interfaces.Menu.menuItemDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.example.rmsproject.util.HibernateUtil;
@@ -10,7 +10,7 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class menuItemDOAImp implements menuItemDOA {
+public class menuItemDAOImp implements menuItemDAO {
 
     @Override
     public void save(MenuItem menuItem) {

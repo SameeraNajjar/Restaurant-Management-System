@@ -1,10 +1,10 @@
 package org.example.rmsproject.models.services.Table.DAOReservation;
 
-import org.example.rmsproject.models.Customer;
-import org.example.rmsproject.models.Reservation;
-import org.example.rmsproject.models.ResturantTable;
-import org.example.rmsproject.models.interfaces.Table.customerDOA;
-import org.example.rmsproject.models.interfaces.Table.reservationDOA;
+import org.example.rmsproject.models.entity.Customer;
+import org.example.rmsproject.models.entity.Reservation;
+import org.example.rmsproject.models.entity.ResturantTable;
+import org.example.rmsproject.models.interfaces.Table.customerDAO;
+import org.example.rmsproject.models.interfaces.Table.reservationDAO;
 import org.example.rmsproject.models.services.Table.DAOCustomer.customerDOAImp;
 import org.example.rmsproject.util.HibernateUtil;
 import org.hibernate.Query;
@@ -17,12 +17,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class reservationDOAmp implements reservationDOA {
+public class reservationDAOmp implements reservationDAO {
 
     HibernateUtil hibUtil;
     SessionFactory sessionFactory;
-    private final customerDOA customerService = new customerDOAImp();
-    public reservationDOAmp() {
+    private final customerDAO customerService = new customerDOAImp();
+    public reservationDAOmp() {
         hibUtil=HibernateUtil.getInstance();
         sessionFactory=hibUtil.getSessionFactory();
     }

@@ -1,6 +1,6 @@
 package org.example.rmsproject.models.services.User;
 
-import org.example.rmsproject.models.Role;
+import org.example.rmsproject.models.entity.Role;
 import org.example.rmsproject.models.interfaces.Users.roleDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

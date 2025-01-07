@@ -1,6 +1,6 @@
 package org.example.rmsproject.models.services.User;
 
-import org.example.rmsproject.models.Users;
+import org.example.rmsproject.models.entity.Users;
 import org.example.rmsproject.models.interfaces.Users.UserDAO;
 import org.example.rmsproject.util.HibernateUtil;
 import org.hibernate.Session;

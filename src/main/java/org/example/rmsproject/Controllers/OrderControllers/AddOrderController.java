@@ -7,9 +7,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import org.example.rmsproject.models.Order;
-import org.example.rmsproject.models.OrderItem;
-import org.example.rmsproject.models.services.Order.orderDOAImp;
+import org.example.rmsproject.models.entity.Order;
+import org.example.rmsproject.models.entity.OrderItem;
+import org.example.rmsproject.models.services.Order.orderDAOImp;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ public class AddOrderController implements Initializable {
     @FXML
     private Spinner<Integer> QunatitySpinner;
 
-    private orderDOAImp orderDao = new orderDOAImp();
+    private orderDAOImp orderDao = new orderDAOImp();
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {

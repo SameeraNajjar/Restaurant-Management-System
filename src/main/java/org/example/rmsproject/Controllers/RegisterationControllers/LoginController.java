@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.example.rmsproject.models.Users;
+import org.example.rmsproject.models.entity.Users;
 import org.example.rmsproject.models.services.User.userDAOImp;
 import org.example.rmsproject.util.SessionManager;
 

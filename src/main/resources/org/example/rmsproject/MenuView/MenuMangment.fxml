@@ -12,6 +12,8 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.Priority?>
 
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <AnchorPane fx:id="BackgroundMenu" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.example.rmsproject.Controllers.MenuControllers.MenuManagementController"
             style="-fx-background-color: #004332;">
@@ -22,13 +24,18 @@
 
          <!-- Header Section -->
          <VBox spacing="10" style="-fx-padding: 20;">
-            <Button alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#handleBackToHome"
-                    style="-fx-background-color: #630C2F;" text="Back" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <maxWidth>120.0</maxWidth>
-               <prefHeight>40.0</prefHeight>
+            <Button onAction="#handleBackToHome"
+                    style="-fx-background-color: #630C2F ; -fx-text-fill: #b18437; -fx-font-weight: bold; -fx-background-radius: 20;"
+                    text="Home"
+                    prefHeight="40.0"
+                    prefWidth="160.0">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/HomePageIconImg.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
 
             <Label fx:id="MenuTitle" alignment="CENTER" text="Menu Management" textFill="#c0a159"

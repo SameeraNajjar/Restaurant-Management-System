@@ -9,8 +9,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.example.rmsproject.models.Order;
-import org.example.rmsproject.models.OrderItem;
+import org.example.rmsproject.models.entity.Order;
+import org.example.rmsproject.models.entity.OrderItem;
 
 import java.io.IOException;
 

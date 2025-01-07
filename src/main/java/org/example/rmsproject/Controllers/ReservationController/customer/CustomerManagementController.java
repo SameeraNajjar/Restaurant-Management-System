@@ -20,8 +20,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import org.example.rmsproject.Controllers.ReservationController.SuccessFailedMessageManagmantController;
-import org.example.rmsproject.models.Customer;
-import org.example.rmsproject.models.interfaces.Table.customerDOA;
+import org.example.rmsproject.models.entity.Customer;
+import org.example.rmsproject.models.interfaces.Table.customerDAO;
 import org.example.rmsproject.models.services.Table.DAOCustomer.customerDOAImp;
 import org.example.rmsproject.models.services.Table.DAOfactoryCustomer.DAOFactoryCustomer;
 
@@ -101,7 +101,7 @@ public class CustomerManagementController implements Initializable {
                 };
             }})
 ;
-        customerDOA  customerDAO = DAOFactoryCustomer.getCustomerDAO();
+        customerDAO customerDAO = DAOFactoryCustomer.getCustomerDAO();
         ObservableList<Customer> customerData = FXCollections.observableArrayList(customerDAO.getAllCustomers());
         customerTableView.setItems(customerData);
 
@@ -238,7 +238,7 @@ public class CustomerManagementController implements Initializable {
         customerTableView.setItems(items);
     }
     public void refreshCustomerTable() {
-        customerDOA  customerDAO = DAOFactoryCustomer.getCustomerDAO();
+        customerDAO customerDAO = DAOFactoryCustomer.getCustomerDAO();
         ObservableList<Customer> customerData = FXCollections.observableArrayList(customerDAO.getAllCustomers());
         customerTableView.setItems(customerData);
         customerTableView.refresh();

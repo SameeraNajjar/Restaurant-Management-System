@@ -2,10 +2,10 @@ package org.example.rmsproject.models.services.Order;
 
 
 
-import org.example.rmsproject.models.Order;
-import org.example.rmsproject.models.OrderItem;
+import org.example.rmsproject.models.entity.Order;
+import org.example.rmsproject.models.entity.OrderItem;
 
-import org.example.rmsproject.models.interfaces.Order.orderDOA;
+import org.example.rmsproject.models.interfaces.Order.orderDAO;
 import org.example.rmsproject.util.HibernateUtil;
 import org.hibernate.Session;
 
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class orderDOAImp implements orderDOA {
+public class orderDAOImp implements orderDAO {
 
 
     @Override

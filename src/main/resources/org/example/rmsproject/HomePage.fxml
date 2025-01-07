@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #003B27;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.HomePageController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #003B27;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.HomePageController">
 
     <VBox alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="800.0" prefWidth="160.0" spacing="25.0" style="-fx-background-color: #003B27;">
         <Button fx:id="home_btn" onAction="#handleHomeButton" prefHeight="60.0" prefWidth="140.0" style="-fx-background-color: #630C2F; -fx-text-fill: #c0a159; -fx-font-size: 22;" text="🏠 Home" />

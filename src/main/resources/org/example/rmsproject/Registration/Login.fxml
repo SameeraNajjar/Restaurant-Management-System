@@ -22,12 +22,12 @@
          </children></AnchorPane>
       <TextField fx:id="email" layoutX="818.0" layoutY="357.0" prefHeight="32.0" prefWidth="340.0" />
       <PasswordField fx:id="password" layoutX="822.0" layoutY="471.0" prefHeight="32.0" prefWidth="340.0" />
-      <Label layoutX="829.0" layoutY="301.0" prefHeight="34.0" prefWidth="100.0" text="email" textFill="#b89555">
+      <Label layoutX="829.0" layoutY="301.0" prefHeight="34.0" prefWidth="100.0" text="Email" textFill="#b89555">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <Label layoutX="822.0" layoutY="408.0" prefHeight="38.0" prefWidth="150.0" text="password" textFill="#b89555">
+      <Label layoutX="822.0" layoutY="408.0" prefHeight="38.0" prefWidth="150.0" text="Password" textFill="#b89555">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>

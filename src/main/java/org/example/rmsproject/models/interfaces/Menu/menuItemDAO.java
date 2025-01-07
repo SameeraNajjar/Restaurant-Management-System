@@ -1,11 +1,11 @@
 package org.example.rmsproject.models.interfaces.Menu;
 
-import org.example.rmsproject.models.MenuItem;
-import org.example.rmsproject.models.Category;
+import org.example.rmsproject.models.entity.MenuItem;
+import org.example.rmsproject.models.entity.Category;
 
 import java.util.List;
 
-public interface menuItemDOA {
+public interface menuItemDAO {
 
     void save(MenuItem menuItem);
     void update(MenuItem menuItem);

@@ -15,10 +15,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import org.example.rmsproject.models.Order;
-import org.example.rmsproject.models.OrderItem;
-import org.example.rmsproject.models.interfaces.Order.orderDOA;
-import org.example.rmsproject.models.services.Order.orderDOAImp;
+import org.example.rmsproject.models.entity.Order;
+import org.example.rmsproject.models.entity.OrderItem;
+import org.example.rmsproject.models.interfaces.Order.orderDAO;
+import org.example.rmsproject.models.services.Order.orderDAOImp;
 
 import java.io.IOException;
 import java.util.List;
@@ -83,7 +83,7 @@ private Button addOrderButton;
 
     public void initialize() {
 
-        orderDOA ordersDOA = new orderDOAImp();
+        orderDAO ordersDOA = new orderDAOImp();
         List<Order> orders = ordersDOA.getAll(null);
         System.out.println("Orders fetched: " + orders.size());
 

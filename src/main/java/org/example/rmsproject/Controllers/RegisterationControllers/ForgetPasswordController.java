@@ -7,7 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import org.example.rmsproject.models.Users;
+import org.example.rmsproject.Controllers.AbsController;
+import org.example.rmsproject.models.entity.Users;
 import org.example.rmsproject.models.services.User.userDAOImp;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -16,7 +17,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.Random;
 
-public class ForgetPasswordController {
+public class ForgetPasswordController extends AbsController {
     @FXML private TextField emailField;
     @FXML private TextField verificationCodeField;
     @FXML private Button verifyCodeButton;
@@ -91,7 +92,9 @@ public class ForgetPasswordController {
         return String.valueOf(code);
     }
 
-
+    public void handleBackButton(ActionEvent actionEvent) {
+        loadScene(actionEvent, "/org/example/rmsproject/Registration/Login.fxml", null);
+    }
 
 }
 

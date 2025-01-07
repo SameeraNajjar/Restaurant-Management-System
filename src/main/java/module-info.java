@@ -15,7 +15,7 @@ module org.example.rmsproject {
     requires java.activation;
 
     // Allow Hibernate and JavaFX to reflectively access the models package
-    opens org.example.rmsproject.models to org.hibernate.orm.core, javafx.base;
+    opens org.example.rmsproject.models.entity to org.hibernate.orm.core, javafx.base;
 
     // JavaFX FXML reflections for other packages
     opens org.example.rmsproject to javafx.fxml;
@@ -35,5 +35,7 @@ module org.example.rmsproject {
     exports org.example.rmsproject.Controllers.UserManagement;
     exports org.example.rmsproject.Controllers.OrderControllers;
     exports org.example.rmsproject.Controllers.MenuControllers;
+    exports org.example.rmsproject.Controllers;
+    opens org.example.rmsproject.Controllers to javafx.fxml;
 
 }

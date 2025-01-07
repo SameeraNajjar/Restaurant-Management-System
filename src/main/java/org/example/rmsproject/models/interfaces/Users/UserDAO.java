@@ -1,6 +1,6 @@
 package org.example.rmsproject.models.interfaces.Users;
 
-import org.example.rmsproject.models.Users;
+import org.example.rmsproject.models.entity.Users;
 
 import java.util.List;
 

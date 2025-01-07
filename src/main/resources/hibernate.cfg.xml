@@ -19,7 +19,7 @@
         <property name="hbm2ddl.auto">update</property>
 
         <!-- Annotated classes -->
-        <mapping class="org.example.rmsproject.models.Users"/>
+        <mapping class="org.example.rmsproject.models.entity.Users"/>
 
     </session-factory>
 </hibernate-configuration>

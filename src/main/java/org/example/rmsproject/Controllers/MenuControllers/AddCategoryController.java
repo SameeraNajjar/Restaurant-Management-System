@@ -9,8 +9,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import org.example.rmsproject.models.Category;
-import org.example.rmsproject.models.services.Menu.categoryDOAImp;
+import org.example.rmsproject.models.entity.Category;
+import org.example.rmsproject.models.services.Menu.categoryDAOImp;
 import java.util.Optional;
 
 public class AddCategoryController {
@@ -27,7 +27,7 @@ public class AddCategoryController {
             Category category = new Category();
             category.setName(categoryName);
 
-            categoryDOAImp categoryDAO = new categoryDOAImp();
+            categoryDAOImp categoryDAO = new categoryDAOImp();
             categoryDAO.save(category);
 
             showAlert("Success", "Category added successfully!", Alert.AlertType.INFORMATION);

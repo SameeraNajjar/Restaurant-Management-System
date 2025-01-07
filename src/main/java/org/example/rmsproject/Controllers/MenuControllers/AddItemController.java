@@ -8,13 +8,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import org.example.rmsproject.models.Category;
-import org.example.rmsproject.models.MenuItem;
+import org.example.rmsproject.models.entity.Category;
+import org.example.rmsproject.models.entity.MenuItem;
 import org.example.rmsproject.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import org.example.rmsproject.models.services.Menu.categoryDOAImp;
+import org.example.rmsproject.models.services.Menu.categoryDAOImp;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +34,7 @@ public class AddItemController {
     public ComboBox<String> categoryComboBox;
 
     private MenuManagementController menuManagementController;
-    private categoryDOAImp categoryDOAImp = new categoryDOAImp();
+    private categoryDAOImp categoryDOAImp = new categoryDAOImp();
     private Session session;
 
     public void setSession(Session session) {

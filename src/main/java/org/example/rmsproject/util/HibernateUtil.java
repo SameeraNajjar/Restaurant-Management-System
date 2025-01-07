@@ -1,16 +1,16 @@
 package org.example.rmsproject.util;
 
-import org.example.rmsproject.models.Users;
-import org.example.rmsproject.models.Role;
-import org.example.rmsproject.models.ResturantTable;
-import org.example.rmsproject.models.Reservation;
-import org.example.rmsproject.models.OrderItem;
-import org.example.rmsproject.models.Permission;
-import org.example.rmsproject.models.Menu;
-import org.example.rmsproject.models.MenuItem;
-import org.example.rmsproject.models.Customer;
-import org.example.rmsproject.models.Category;
-import org.example.rmsproject.models.Order;
+import org.example.rmsproject.models.entity.Users;
+import org.example.rmsproject.models.entity.Role;
+import org.example.rmsproject.models.entity.ResturantTable;
+import org.example.rmsproject.models.entity.Reservation;
+import org.example.rmsproject.models.entity.OrderItem;
+import org.example.rmsproject.models.entity.Permission;
+import org.example.rmsproject.models.entity.Menu;
+import org.example.rmsproject.models.entity.MenuItem;
+import org.example.rmsproject.models.entity.Customer;
+import org.example.rmsproject.models.entity.Category;
+import org.example.rmsproject.models.entity.Order;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;

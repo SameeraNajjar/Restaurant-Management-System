@@ -12,8 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.example.rmsproject.models.Role;
-import org.example.rmsproject.models.Users;
+import org.example.rmsproject.models.entity.Role;
+import org.example.rmsproject.models.entity.Users;
 import org.example.rmsproject.models.interfaces.Users.UserDAO;
 import org.example.rmsproject.models.services.User.userDAOImp;
 
@@ -99,7 +99,7 @@ public class RegistrationController implements Initializable {
         Save_registration_information_database();
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/HomePage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Registration/Login.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));

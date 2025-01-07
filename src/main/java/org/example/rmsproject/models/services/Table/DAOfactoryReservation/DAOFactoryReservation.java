@@ -1,9 +1,9 @@
 package org.example.rmsproject.models.services.Table.DAOfactoryReservation;
-import org.example.rmsproject.models.interfaces.Table.reservationDOA;
-import org.example.rmsproject.models.services.Table.DAOReservation.reservationDOAmp;
+import org.example.rmsproject.models.interfaces.Table.reservationDAO;
+import org.example.rmsproject.models.services.Table.DAOReservation.reservationDAOmp;
 
 public class DAOFactoryReservation {
-    public static reservationDOA getCustomerDAO() {
-        return new reservationDOAmp();
+    public static reservationDAO getCustomerDAO() {
+        return new reservationDAOmp();
     }
 }
