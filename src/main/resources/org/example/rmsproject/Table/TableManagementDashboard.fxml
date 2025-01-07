@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -14,21 +15,38 @@
    <children>
       <VBox fx:id="vboxSidebar" alignment="CENTER" layoutX="0.0" layoutY="-2.3999999999999986" prefHeight="1082.0" prefWidth="240.0" spacing="25.0" style="-fx-background-color: #004332;" styleClass="vbox-sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-58.0">
          <children>
-            <Pane prefHeight="134.0" prefWidth="240.0">
+            <HBox prefHeight="43.0" prefWidth="160.0">
                <children>
-                  <ImageView fitHeight="70.0" fitWidth="100.0" layoutX="60.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                  <HBox>
+                     <children>
+                        <Button onMouseClicked="#loadHome" mnemonicParsing="false" prefHeight="33.0" prefWidth="149.0" text="Home" textFill="#b19251">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../images/HomePageIconImg.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <Pane prefHeight="170.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="70.0" fitWidth="100.0" layoutX="70.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../images/TableIcon.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#b19251" layoutX="8.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table Management">
+                  <Text fill="#b19251" layoutX="25.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Table Management">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
                </children>
             </Pane>
-            <Pane prefHeight="123.0" prefWidth="240.0" />
+            <Pane prefHeight="36.0" prefWidth="240.0" />
             <Button fx:id="viewId" mnemonicParsing="false" prefHeight="50.0" prefWidth="223.0" styleClass="button" text="View" textFill="#b19251" />
             <Button fx:id="reservationsId" mnemonicParsing="false" onAction="#loadReservations" prefHeight="50.0" prefWidth="223.0" styleClass="button" text="Reservations" textFill="#b19251" />
             <Button fx:id="addId" mnemonicParsing="false" onAction="#loadAdd" prefHeight="50.0" prefWidth="222.0" styleClass="button" text="Add" textFill="#b19251" />

@@ -9,14 +9,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0"
             prefWidth="350.0" style="-fx-background-color: #630C2F;" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.rmsproject.Controllers.ReservationController.AddReservationController">
+            fx:controller="org.example.rmsproject.Controllers.ReservationController.SuccessFailedMessageManagmantController">
     <Text fill="#b19251" layoutX="110.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Success!">
         <font>
             <Font size="35.0"/>
         </font>
     </Text>
     <Text fill="#b19251" layoutX="-14.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0"
-          text="Your reservation has been completed successfully!" textAlignment="CENTER"
+          text="Customer added successfully!" textAlignment="CENTER"
           wrappingWidth="380.4609832763672">
         <font>
             <Font size="18.0"/>
@@ -26,11 +26,11 @@
                preserveRatio="true">
         <Image url="@../../../../images/Success_Icon.png"/>
     </ImageView>
-    <Button layoutX="144.0" layoutY="190.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0"
-            style="-fx-border-color: #B19251; -fx-border-width: 3px;" text="OK" textFill="#630c2f">
-        //onAction="#closeMessageS"
+    <Button fx:id="closeButton" layoutX="144.0" layoutY="190.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0"
+            style="-fx-border-color: #B19251; -fx-border-width: 3px;" text="OK" textFill="#630c2f" onAction="#close_Form">
         <font>
             <Font size="18.0"/>
         </font>
     </Button>
+
 </AnchorPane>
