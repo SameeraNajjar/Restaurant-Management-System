@@ -42,7 +42,8 @@ public class ViewOrderController {
 
     @FXML
     private TableView<Order> ordersTable;
-
+@FXML
+private Button addOrderButton;
 
     @FXML
     private void handleViewDetailsButtonAction(ActionEvent event) {
@@ -112,6 +113,22 @@ public class ViewOrderController {
 
         addButtonsToOrderIdColumn();
     }
+    @FXML
+    private void handleAddOrderButtonAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/rmsproject/Order_Management/AddOrder.fxml"));
+            Parent addOrderRoot = loader.load();
+
+            Stage stage = (Stage) addOrderButton.getScene().getWindow();
+            stage.setScene(new Scene(addOrderRoot));
+            stage.setTitle("Add Order");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Failed to load Add Order page.", ButtonType.OK);
+            alert.showAndWait();
+        }
+    }
 
 
 
@@ -175,6 +192,7 @@ public class ViewOrderController {
                 };
             }
         });
+
     }
 
 }

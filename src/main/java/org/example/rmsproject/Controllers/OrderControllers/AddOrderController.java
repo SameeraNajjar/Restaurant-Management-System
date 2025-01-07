@@ -30,7 +30,7 @@ public class AddOrderController implements Initializable {
     @FXML
     private ComboBox<String> itemsBox;
 
-    private String[] items = {"item1", "item2", "item3"};
+    private String[] items = {"pizza", "pasta", "burger"};
 
     @FXML
     private TextField customerName;
