@@ -199,17 +199,14 @@ public class MenuManagementController {
 
             alert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.OK) {
-                    // حذف جميع العناصر المرتبطة بالفئة
                     ObservableList<MenuItem> relatedMenuItems = FXCollections.observableArrayList(menuItemDOA.getMenuItemsByCategory(selectedCategory));
                     for (MenuItem menuItem : relatedMenuItems) {
                         menuItemDOA.delete(menuItem);
                     }
 
-                    // حذف الفئة نفسها
                     categoryDOA.delete(selectedCategory);
                     categoryTable.getItems().remove(selectedCategory);
 
-                    // تحديث جدول العناصر
                     loadMenuItemData();
                 }
             });

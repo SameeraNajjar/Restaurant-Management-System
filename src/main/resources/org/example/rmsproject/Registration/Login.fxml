@@ -9,7 +9,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.RegisterationControllers.LoginController">
    <children>
       <AnchorPane layoutX="7.0" layoutY="6.0" prefHeight="1024.0" prefWidth="720.0">
@@ -19,39 +18,37 @@
                   <Image url="@../../../../images/y.png" />
                </image>
             </ImageView>
-         </children></AnchorPane>
-      <TextField fx:id="email" layoutX="818.0" layoutY="357.0" prefHeight="32.0" prefWidth="340.0" />
-      <PasswordField fx:id="password" layoutX="822.0" layoutY="471.0" prefHeight="32.0" prefWidth="340.0" />
-      <Label layoutX="829.0" layoutY="301.0" prefHeight="34.0" prefWidth="100.0" text="Email" textFill="#b89555">
+         </children>
+      </AnchorPane>
+      <TextField fx:id="email" layoutX="820.0" layoutY="350.0" prefHeight="40.0" prefWidth="400.0" />
+      <PasswordField fx:id="password" layoutX="820.0" layoutY="450.0" prefHeight="40.0" prefWidth="400.0" />
+      <Label layoutX="820.0" layoutY="310.0" prefHeight="34.0" prefWidth="150.0" text="Email" textFill="#b89555">
          <font>
-            <Font name="System Bold" size="26.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="822.0" layoutY="408.0" prefHeight="38.0" prefWidth="150.0" text="Password" textFill="#b89555">
+      <Label layoutX="820.0" layoutY="410.0" prefHeight="34.0" prefWidth="150.0" text="Password" textFill="#b89555">
          <font>
-            <Font name="System Bold" size="26.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-
-      <Button fx:id="loginButton" layoutX="827.0" layoutY="596.0" mnemonicParsing="false"  onAction="#handleHomeButton"  prefHeight="32.0" prefWidth="340.0" style="-fx-background-color: #B89555;" text="Login" textFill="#630c2f">
+      <Button fx:id="loginButton" layoutX="820.0" layoutY="520.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #B89555;" text="Login" textFill="#630c2f">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="866.0" layoutY="138.0" prefHeight="60.0" prefWidth="168.0" text="Login" textFill="#b89555">
+      <Label layoutX="880.0" layoutY="200.0" prefHeight="60.0" prefWidth="168.0" text="Login" textFill="#b89555">
          <font>
             <Font name="System Bold" size="37.0" />
          </font>
       </Label>
-      <CheckBox fx:id="Chek" layoutX="1058.0" layoutY="546.0" mnemonicParsing="false" text="keep me logged in" textFill="#b89555" />
-      <Label fx:id="haveA" layoutX="829.0" layoutY="675.0" prefHeight="18.0" prefWidth="138.0" text="Don't have an account?" textFill="#b89555" />
-      <Label fx:id="goRegistration" layoutX="988.0" layoutY="675.0" text="Registration" textFill="#fcfcfcdb"  onMouseClicked="#goToRegistration">
+      <CheckBox fx:id="Chek" layoutX="1020.0" layoutY="580.0" mnemonicParsing="false" text="Keep me logged in" textFill="#b89555" />
+      <Label fx:id="haveA" layoutX="820.0" layoutY="630.0" prefHeight="18.0" prefWidth="200.0" text="Don't have an account?" textFill="#b89555" />
+      <Label fx:id="goRegistration" layoutX="1020.0" layoutY="630.0" text="Registration" textFill="#fcfcfcdb" onMouseClicked="#goToRegistration">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="forgotYourPassword" layoutX="818.0" layoutY="542.0" mnemonicParsing="false"
-              style="-fx-background-color: #B89555;" text="Forgot your password?" textFill="#630c2f"
-              onAction="#goToForgotPassword" />
+      <Button fx:id="forgotYourPassword" layoutX="820.0" layoutY="580.0" mnemonicParsing="false" style="-fx-background-color: #B89555;" text="Forgot your password?" textFill="#630c2f" onAction="#goToForgotPassword" />
    </children>
 </AnchorPane>

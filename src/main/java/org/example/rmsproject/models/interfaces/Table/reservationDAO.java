@@ -20,4 +20,7 @@ public interface reservationDAO {
     void addCustomer(String name, String phone);
     Customer getCustomerByPhone(String phone);
     List<Customer> getAllCustomers();
+    List<Reservation> getReservationsByTableAndTime(int tableId, Date date, Time time);
+
+
 }

@@ -10,62 +10,61 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #004332;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.rmsproject.Controllers.RegisterationControllers.RegistrationController">
    <children>
       <AnchorPane prefHeight="1024.0" prefWidth="720.0">
          <children>
             <!-- Full Name Input -->
-            <Label layoutX="87.0" layoutY="63.0" prefHeight="18.0" prefWidth="124.0" text="Full Name" textFill="#b89555">
+            <Label layoutX="80.0" layoutY="50.0" prefHeight="30.0" prefWidth="150.0" text="Full Name" textFill="#b89555">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="fullName" layoutX="65.0" layoutY="116.0" prefHeight="33.0" prefWidth="370.0" />
+            <TextField fx:id="fullName" layoutX="80.0" layoutY="90.0" prefHeight="40.0" prefWidth="400.0" />
 
             <!-- Email Input -->
-            <Label layoutX="101.0" layoutY="204.0" prefHeight="35.0" prefWidth="103.0" text="Email" textFill="#b89555">
+            <Label layoutX="80.0" layoutY="150.0" prefHeight="30.0" prefWidth="150.0" text="Email" textFill="#b89555">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="Email" layoutX="75.0" layoutY="253.0" prefHeight="33.0" prefWidth="370.0" />
+            <TextField fx:id="Email" layoutX="80.0" layoutY="190.0" prefHeight="40.0" prefWidth="400.0" />
 
             <!-- Password Fields -->
-            <Label layoutX="99.0" layoutY="330.0" text="Password" textFill="#b89555">
+            <Label layoutX="80.0" layoutY="250.0" prefHeight="30.0" prefWidth="150.0" text="Password" textFill="#b89555">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <PasswordField fx:id="Password" layoutX="75.0" layoutY="383.0" prefHeight="33.0" prefWidth="370.0" />
+            <PasswordField fx:id="Password" layoutX="80.0" layoutY="290.0" prefHeight="40.0" prefWidth="400.0" />
 
-            <Label layoutX="84.0" layoutY="476.0" prefHeight="35.0" prefWidth="240.0" text="Confirm Password" textFill="#b89555">
+            <Label layoutX="80.0" layoutY="350.0" prefHeight="30.0" prefWidth="200.0" text="Confirm Password" textFill="#b89555">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <PasswordField fx:id="ConfirmPassword" layoutX="75.0" layoutY="537.0" prefHeight="33.0" prefWidth="370.0" />
+            <PasswordField fx:id="ConfirmPassword" layoutX="80.0" layoutY="390.0" prefHeight="40.0" prefWidth="400.0" />
 
             <!-- Role Selection -->
-            <Label layoutX="87.0" layoutY="632.0" prefHeight="35.0" prefWidth="318.0" text="Select the Role:" textFill="#b89555">
+            <Label layoutX="80.0" layoutY="450.0" prefHeight="30.0" prefWidth="200.0" text="Select the Role:" textFill="#b89555">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <ComboBox fx:id="ComboList" layoutX="75.0" layoutY="699.0" onAction="#handleSignUp" prefHeight="33.0" prefWidth="370.0" />
+            <ComboBox fx:id="ComboList" layoutX="80.0" layoutY="490.0" onAction="#handleSignUp" prefHeight="40.0" prefWidth="400.0" />
 
             <!-- Terms and Conditions -->
-            <CheckBox fx:id="Chekin" layoutX="75.0" layoutY="762.0" mnemonicParsing="false" text="I agree to the terms and privacy policy" textFill="#b89555" />
+            <CheckBox fx:id="Chekin" layoutX="80.0" layoutY="550.0" mnemonicParsing="false" text="I agree to the terms and privacy policy" textFill="#b89555" />
 
             <!-- Sign Up Button -->
-            <Button fx:id="SignUp" layoutX="490.0" layoutY="687.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="45.0" prefWidth="174.0" style="-fx-background-color: linear-gradient(#3b101b, #6c141e);" text="Sign Up" textFill="#fcfcfc">
+            <Button fx:id="SignUp" layoutX="120.0" layoutY="600.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(#3b101b, #6c141e);" text="Sign Up" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Button>
 
             <!-- Login Redirect Text -->
-            <Label fx:id="haveAccount" layoutX="449.0" layoutY="751.0" onMouseClicked="#goToLogin" text="Already have an account?" textFill="#b89555">
+            <Label fx:id="haveAccount" layoutX="120.0" layoutY="670.0" onMouseClicked="#goToLogin" text="Already have an account?" textFill="#b89555">
                <font>
                   <Font size="18.0" />
                </font>
@@ -74,16 +73,16 @@
       </AnchorPane>
 
       <!-- Image on Right Side -->
-      <ImageView fitHeight="439.0" fitWidth="663.0" layoutX="743.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="500.0" fitWidth="600.0" layoutX="800.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../images/h.png" />
          </image>
       </ImageView>
 
       <!-- Registration Title -->
-      <Label layoutX="757.0" layoutY="117.0" prefHeight="112.0" prefWidth="566.0" text="Registration" textFill="#b89555">
+      <Label layoutX="780.0" layoutY="100.0" prefHeight="80.0" prefWidth="400.0" text="Registration" textFill="#b89555">
          <font>
-            <Font name="System Bold" size="96.0" />
+            <Font name="System Bold" size="48.0" />
          </font>
       </Label>
    </children>

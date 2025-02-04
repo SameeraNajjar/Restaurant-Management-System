@@ -225,8 +225,16 @@ public void edit(Reservation reservation) {
         }
         return availableTables;
     }
-
-
+   @Override
+    public List<Reservation> getReservationsByTableAndTime(int tableId, Date date, Time time) {
+       try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+           Query<Reservation> query = session.createQuery("FROM Reservation WHERE restaurantTable.table_id = :tableId AND dateReservation = :date AND timeReservation = :time", Reservation.class);
+           query.setParameter("tableId", tableId);
+           query.setParameter("date", date);
+           query.setParameter("time", time);
+           return query.list();
+       }
+   }
 
 
 }
